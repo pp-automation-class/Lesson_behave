@@ -52,5 +52,12 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h5" contains text "Login to Your Account"
     And I verify element "//div[text()='Email is required']" exists
 
-
+  Scenario: Unsuccessful user login with valid email with space at the end and valid password
+    Given I navigate to "https://dev.linkmygear.com"
+    And I verify element "//h5" contains text "Login to Your Account"
+    When I fill "lauravstesting53@gmail.com " in element "//input[@name='username']"
+    And I fill "T8st8ng38!" in element "//input[@name='password']"
+    And I click on "//button[@type='submit']"
+    Then I verify element "//h5" contains text "Login to Your Account"
+    And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
 
