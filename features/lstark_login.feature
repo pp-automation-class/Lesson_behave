@@ -69,3 +69,12 @@ Scenario: Unsuccessful user login with valid email with leading trailing space a
     And I click on "//button[@type='submit']"
     Then I verify element "//h5" contains text "Login to Your Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
+
+    Scenario: Unsuccessful user login with valid email and valid password with trailing space
+    Given I navigate to "https://dev.linkmygear.com"
+    And I verify element "//h5" contains text "Login to Your Account"
+    When I fill "lauravstesting53@gmail.com" in element "//input[@name='username']"
+    And I fill "T8st8ng38! " in element "//input[@name='password']"
+    And I click on "//button[@type='submit']"
+    Then I verify element "//h5" contains text "Login to Your Account"
+    And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
