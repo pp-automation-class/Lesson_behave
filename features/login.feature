@@ -35,10 +35,18 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h5" contains text "Login to Your Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
 
-    Scenario: Unsuccessful user login with valid email and empty password field
+  Scenario: Unsuccessful user login with valid email and empty password field
     Given I navigate to "https://dev.linkmygear.com"
     And I verify element "//h5" contains text "Login to Your Account"
     When I fill "lauravstesting5@gmail.com" in element "//input[@name='username']"
     And I click on "//button[@type='submit']"
     Then I verify element "//h5" contains text "Login to Your Account"
     And I verify element "//div[text()='Password is required']" exists
+
+  Scenario: Unsuccessful user login with empty email field and valid password
+    Given I navigate to "https://dev.linkmygear.com"
+    And I verify element "//h5" contains text "Login to Your Account"
+    When I fill "T8st8ng38" in element "//input[@name='password']"
+    And I click on "//button[@type='submit']"
+    Then I verify element "//h5" contains text "Login to Your Account"
+    And I verify element "//div[text()='Email is required']" exists
