@@ -12,7 +12,7 @@ Feature: LinkMyGear Application Login
 
     Examples:
       | username                        | password        | verification_element                                    |
-      | 7nxjno9lr@mozmail.com           | r+WLLX9qwx^:>:3 | //h3[contains(text(), 'My devices')]                    |
+      | 7nxjno9lr@mozmail.com           | r+WLLX9qwx^:>:3 | //h3[contains(text(), 'My device')]                    |
       | 7nxjno9lrpp@mozmail.com         | r+WLLX9qwx^:>:3 | //p[text()='Sorry, unrecognized username or password.'] |
       | 7nxjno9lrpp@mozmail.com         | xxxxx           | //p[text()='Sorry, unrecognized username or password.'] |
       | 7nxjno9lr@mozmail.com           | xxxxx           | //p[text()='Sorry, unrecognized username or password.'] |
