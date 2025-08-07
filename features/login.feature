@@ -6,7 +6,7 @@ Feature: LinkMyGear Application Login
     When I fill "pcs.automationclass@gmail.com" in element "//input[@name='username']"
     And I fill "1234567" in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
-    Then I verify element "//h3[contains(text(), 'My devices ')]" exists
+    Then I verify element "//h3[contains(text(), 'My devices')]" exists
 
   Scenario: Unsuccessful user login with invalid credentials
     Given I navigate to "https://dev.linkmygear.com"
@@ -16,3 +16,6 @@ Feature: LinkMyGear Application Login
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h5" contains text "Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
+
+
+
