@@ -12,4 +12,4 @@ def step_impl(context, sec):
         sec:
         context (behave.runner.Context): Behave context object
     """
-    time.sleep(sec)
+    time.sleep(float(sec))
