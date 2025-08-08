@@ -24,3 +24,11 @@ Feature: LinkMyGear Application Login
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h5" contains text "Account"
     And I verify element "//div[@class='invalid-feedback'][text()='Password is required']" exists
+
+  Scenario: Unsuccessful user login with empty username and empty password
+    Given I navigate to "https://dev.linkmygear.com"
+    And I verify element "//h5" contains text "Account"
+    And I click on "//button[text()=' Login ']"
+    Then I verify element "//h5" contains text "Account"
+    And I verify element "//div[@class='invalid-feedback'][text()='Password is required']" exists
+    And I verify element "//div[@class='invalid-feedback'][text()='Email is required']" exists
