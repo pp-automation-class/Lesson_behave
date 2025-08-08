@@ -24,3 +24,12 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h5" contains text "Account"
     And I verify element "//div[@class='invalid-feedback'][text()='Password is required']" exists
     And I verify element "//div[@class='invalid-feedback'][text()='Email is required']" exists
+
+  Scenario: Unsuccessful password recovery with the correct login due to some problems with the site.
+    Given I navigate to "https://dev.linkmygear.com"
+    And I verify element "//h5" contains text "Account"
+    And I click on "//a[@href='#/restorePassword']"
+    Then I verify element "//h5" contains text "Restore Password"
+    When I fill "artur.gaidar.test.portnov@gmail.com" in element "//input[@class='el-input__inner']"
+    And I click on "//button[text()=' Send ']"
+    Then I verify element "//p[@class='el-message__content']" contains text "Unable to send email. Contact the site administrator if the problem persists."
