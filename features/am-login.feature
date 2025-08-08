@@ -22,7 +22,7 @@ Feature: LinkMyGear Application Login
 
     Examples:
       | email                      | verification_element                             |
-      | dx5e7nxjno9lr@mozmail.com  | //h3[contains(text(), 'My device')]              |
+      | dx6e7nxjno9lr@mozmail.com  | //h3[contains(text(), 'My device')]              |
       | 7nxjno9lr@mozmail.com      | //p[contains(text(), 'The user already exists')] |
 
   Scenario: User registration with empty email
