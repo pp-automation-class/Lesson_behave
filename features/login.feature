@@ -16,3 +16,11 @@ Feature: LinkMyGear Application Login
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h5" contains text "Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
+
+  Scenario: Unsuccessful user login with valid username and empty password
+    Given I navigate to "https://dev.linkmygear.com"
+    And I verify element "//h5" contains text "Account"
+    When I fill "artur.gaidar.test.portnov@gmail.com" in element "//input[@name='username']"
+    And I click on "//button[text()=' Login ']"
+    Then I verify element "//h5" contains text "Account"
+    And I verify element "//div[@class='invalid-feedback'][text()='Password is required']" exists
