@@ -41,7 +41,8 @@ def fill_text_in_element(context, text, xpath):
         text: Text to fill in the element
         xpath: XPath selector for the element
     """
-    context.page.fill_element(xpath, text)
+    if text != 'Skip':
+        context.page.fill_element(xpath, text)
 
 
 @step('I verify element "{xpath}" exists')
@@ -80,3 +81,48 @@ def wait_for_element(context, xpath):
         xpath: XPath selector for the element
     """
     context.page.wait_for_element(xpath)
+
+@step('Login with following credentials')
+def login_with_credentials(context):
+    for row in context.table:
+        username = row['username']
+        password = row['password']
+        
+        if username != 'Skip':
+            context.page.fill_element("//input[@name='username']", username)
+        
+        if password != 'Skip':
+            context.page.fill_element("//input[@name='password']", password)
+            
+        context.page.click_element("//button[text()=' Login ']")
+
+
+@step('Login with following credentials from table')
+def login_with_credentials_from_table(context):
+    """
+    Logs in using the defined credentials from a table provided within the test context.
+    'username' - User name
+    'password' - password
+    'address' - Address (optional)
+
+    If 'username' or 'password' is 'Skip', the corresponding field will be skipped.
+    """
+    username = None
+    password = None
+    
+    for row in context.table:
+        key = row[0]
+        value = row[1]
+        
+        if key == 'username':
+            username = value
+        elif key == 'password':
+            password = value
+    
+    if username and username != 'Skip':
+        context.page.fill_element("//input[@name='username']", username)
+    
+    if password and password != 'Skip':
+        context.page.fill_element("//input[@name='password']", password)
+        
+    context.page.click_element("//button[text()=' Login ']")
