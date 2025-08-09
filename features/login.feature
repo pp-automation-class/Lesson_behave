@@ -16,3 +16,16 @@ Feature: LinkMyGear Application Login
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h5" contains text "Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
+
+  Scenario: Login successful with
+    And Login with following credentials
+      | username                      | password |
+      | pcs.automationclass@gmail.com | 1234567  |
+    Then I verify element "//h3[contains(text(), 'My devices')]" exists
+
+  Scenario: Login unsuccessful with table
+    And Login with following credentials from table
+      | field    | value                         |
+      | username | pcs.automationclass@gmail.com |
+      | password | 1234567                       |
+    Then I verify element "//h3[contains(text(), 'My devices')]" exists

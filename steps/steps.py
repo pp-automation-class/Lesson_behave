@@ -99,6 +99,14 @@ def login_with_credentials(context):
 
 @step('Login with following credentials from table')
 def login_with_credentials_from_table(context):
+    """
+    Logs in using the defined credentials from a table provided within the test context.
+    'username' - User name
+    'password' - password
+    'address' - Address (optional)
+
+    If 'username' or 'password' is 'Skip', the corresponding field will be skipped.
+    """
     username = None
     password = None
     
