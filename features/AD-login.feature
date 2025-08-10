@@ -48,3 +48,10 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h5[contains(text(), 'Create an Account')]" exists
     And I click on "//a[text()='Log in']"
     Then I verify element "//h5[contains(text(), 'Login to Your Account')]" exists
+
+  Scenario: Go to Terms and Conditions
+    When I click on "//a[text()='Create an account']"
+    Then I verify element "//h5[contains(text(), 'Create an Account')]" exists
+    And I click on "//a[text()='Terms and Conditions']"
+    Then I navigate to "https://linkmygear.com/terms-and-conditions/"
+    And I verify element "//h1[text()='Terms And Conditions']" exists
