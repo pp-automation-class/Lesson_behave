@@ -28,3 +28,7 @@ Feature: LinkMyGear Application Login
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h5" contains text "Account"
     And I verify element "//div[text()='Password is required']" exists
+
+  Scenario: Forgot password
+    When I click on "//a[text()='Forgot password?']"
+    Then I verify element "//h5[contains(text(), 'Restore Password')]" exists
