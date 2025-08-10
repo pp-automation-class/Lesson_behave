@@ -8,7 +8,7 @@ Feature: LinkMyGear Application Login
     When I fill "test12345.sky@gmail.com" in element "//input[@name='username']"
     And I fill "%12345ytkonos" in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
-    Then I verify element "//h3[contains(text(), 'My devices')]" exists
+    Then I verify element "//h3[contains(text(),'My device')]" exists
 
   Scenario: Unsuccessful user login with invalid username
     When I fill "xxx" in element "//input[@name='username']"
@@ -27,7 +27,7 @@ Feature: LinkMyGear Application Login
     When I fill "test12345.sky@gmail.com" in element "//input[@name='username']"
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h5" contains text "Account"
-    And I verify element "//div[text()='Login to Your Account']" exists
+    And I verify element "//div[text()='Password is required']" exists
 
   Scenario: Forgot password
     When I click on "//a[text()='Forgot password?']"

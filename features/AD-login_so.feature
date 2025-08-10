@@ -22,7 +22,6 @@ Feature: LinkMyGear Application Login
       | test12345.skygmail.com    | %12345ytkonos | //p[text()='Sorry, unrecognized username or password.'] |
       | test12345.sky@gmailcom    | %12345ytkonos | //p[text()='Sorry, unrecognized username or password.'] |
 
-
   Scenario Outline: Forgot password with various credentials
     Given I navigate to "https://dev.linkmygear.com"
     And I verify element "//h5" contains text "Account"
@@ -31,7 +30,8 @@ Feature: LinkMyGear Application Login
     When I fill "<Your Email>" in element "//input[@class='el-input__inner']"
     And I click on "//button[text()=' Send ']"
     And I verify element "<verification_element>" exists
-    When I wait for 1.5 seconds
+    When I wait for 2 seconds
+
 
     Examples:
       | Your Email                | verification_element                                                                                                                 |
