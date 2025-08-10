@@ -19,6 +19,13 @@ Feature: LinkMyGear Devices Settings
     Then  I click on "//div[@class='form-submit']/button[.//span[text()='Add new device']]"
     And   I wait for 2 seconds
 
+  Scenario: Device Settings - Edit Device
+    When  I verify element "(//div/span[text()='Test Device #1'])[1]" exists
+    Then  I click on "(//span[text()='Test Device #1'])[1]/../../../td[4]/div/div[@class='btns']/button[.=' Edit ']"
+    When  I wait for element "//h3[@class='modal-title' and text()='Edit device']" to be visible
+    Then  I fill "Test Device #2" in element "//input[@class='el-input__inner']"
+    And   I click on "//div[@class='form-submit']/button[.//span[text()='Update']]"
+
   Scenario: Device Settings - Cancel Delete Device
     When I verify element "(//div/span[text()='Test Device #1'])[1]" exists
     Then I click on "(//span[text()='Test Device #1'])[1]/../../../td[4]/div/div[@class='btns']/button[.=' Delete ']"
