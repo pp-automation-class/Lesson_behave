@@ -39,7 +39,7 @@ Feature: LinkMyGear Devices Settings
     When I wait for element "//h3[@class='modal-title' and text()='Delete device']" to be visible
     Then I click on "//button[.='Cancel']"
 
-  Scenario: Device Settings - Delete Device
+  Scenario: Device Settings - Delete Device & Confirm
     When I verify element "(//div/span[text()='Test Device #2'])[1]" exists
     Then I click on "(//span[text()='Test Device #2'])[1]/../../../td[4]/div/div[@class='btns']/button[.=' Delete ']"
     When I wait for element "//h3[@class='modal-title' and text()='Delete device']" to be visible
