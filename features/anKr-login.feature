@@ -55,3 +55,5 @@ Feature: LinkMyGear Application Login
     And I click on "//button[text()=' Register ']"
     #Open Login To Your Account page
     Then I verify element "//h5" contains text "Account"
+
+    Scenario: Login successful with
