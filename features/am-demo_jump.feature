@@ -22,4 +22,5 @@ Feature: LinkMyGear Demo Jump
     When  I click on "//input[@placeholder='Select date and time']"
     And   I click on "//div[@class='el-picker-panel__footer']/button[.='OK']"
     Then  I click on "//div[@class='form-submit']/button/span[contains(.,'Generate demo jump')]"
+    And   I wait for 5 seconds
     And   I wait for element "//p[@class='el-message__content' and .='Demo jump has been generated']" to be visible
