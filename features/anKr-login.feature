@@ -47,7 +47,7 @@ Feature: LinkMyGear Application Login
     When I fill "12345 " in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
     Then I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
-  
+
   Scenario: Successful user create account with valid credential
     Then I click on "//a[text()='Create an account']"
     When I fill "sekex12269@discrip.com" in element "//div[@class='el-input']//input"
@@ -56,4 +56,17 @@ Feature: LinkMyGear Application Login
     #Open Login To Your Account page
     Then I verify element "//h5" contains text "Account"
 
-    Scenario: Login successful with
+  Scenario: Login successful with
+    And Login with following credentials
+      | username               | password |
+      | akr.autotest@gmail.com | 12345    |
+    Then I verify element "//h3[contains(text(), 'My device ')]" exists
+
+  Scenario: Login unsuccessful with Table
+    And Login with following credentials from table
+      | field    | value                  |
+      | username | akr.autotest@gmail.com |
+      | password | 13579                  |
+    Then I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
+
+
