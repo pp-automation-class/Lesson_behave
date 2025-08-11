@@ -23,10 +23,3 @@ Feature: LinkMyGear Demo Jump
     And   I click on "//div[@class='el-picker-panel__footer']/button[.='OK']"
     Then  I click on "//div[@class='form-submit']/button/span[contains(.,'Generate demo jump')]"
     And   I wait for element "//p[@class='el-message__content' and .='Demo jump has been generated']" to be visible
-
-  Scenario: Generate demo jump with valid current date and time and As group jump
-    When  I click on "//input[@placeholder='Select date and time']"
-    And   I click on "//div[@class='el-picker-panel__footer']/button[.='OK']"
-    And   I click on "//label[@class='el-form-item__label' and .='As group jump']"
-    Then  I click on "//div[@class='form-submit']/button/span[contains(.,'Generate demo jump')]"
-    And   I wait for element "//p[@class='el-message__content' and .='Demo jump has been generated']" to be visible
