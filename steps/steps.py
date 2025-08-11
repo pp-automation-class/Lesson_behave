@@ -80,7 +80,7 @@ def wait_for_element(context, xpath):
         context: Behave context
         xpath: XPath selector for the element
     """
-    context.page.wait_for_element(xpath)
+    context.page.wait_for_element(xpath, timeout=7000)
 
 @step('Login with following credentials')
 def login_with_credentials(context):
