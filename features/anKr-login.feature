@@ -53,7 +53,7 @@ Feature: LinkMyGear Application Login
     When I fill "sekex12269@discrip.com" in element "//div[@class='el-input']//input"
     And I click on "//span[@class='el-checkbox__inner']"
     And I click on "//button[text()=' Register ']"
-    #Open Login To Your Account page
+    #Open Login To Your Account page as  is
     Then I verify element "//h5" contains text "Account"
 
   Scenario: Login successful with
