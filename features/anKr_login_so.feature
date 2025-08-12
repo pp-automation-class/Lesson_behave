@@ -7,7 +7,7 @@ Feature: LinkMyGear Application Login
     When I fill "<password>" in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
     And I verify element "<verification_element>" exists
-    And
+    When I wait for 2 seconds
 
     Examples:
       | username                 | password | verification_element                                    |
