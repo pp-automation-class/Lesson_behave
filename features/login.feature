@@ -29,3 +29,4 @@ Feature: LinkMyGear Application Login
       | username | pcs.automationclass@gmail.com |
       | password | 1234567                       |
     Then I verify element "//h3[contains(text(), 'My devices')]" exists
+
