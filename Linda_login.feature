@@ -20,12 +20,12 @@ Feature: LinkMyGear Application Login
     And I fill "<password>" in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
     Then I verify element "<verification_element>" exists
-    When I wait for 2 seconds
 
     Examples:
-      | username                 | password | verification_element                                    |
-      | alena9tester@gmail.com   | Hello    | //h3[contains(text(), 'My device ')]
-      | alena9tester+1@gmail.com | Hello    |  |
-      | alena9tester@gmail.com   | 13548    |
+      | username                 | password | verification_element                           |
+      | alena9tester@gmail.com   | Hello    | //h3[contains(text(), 'My device ')]           |
+      | alena9tester+1@gmail.com | Hello    | //h5[contains(text(),'Login to Your Account')] |
+      | alena9tester@gmail.com   | 13548    | //h5[contains(text(),'Login to Your Account')] |
+
 
 
