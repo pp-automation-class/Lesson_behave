@@ -16,10 +16,8 @@ Feature: LinkMyGear Device Settings
       And   I click on "//li[.//span[text()='Airguard other']]"
       When  I fill "New Test Device" in element "//input[@class='el-input__inner']"
       Then  I click on "//div[@class='form-submit']/button[.//span[text()='Add new device']]"
-      And   I wait for 2 seconds
       And  I click on "//span[normalize-space(.)='New Test Device']/following::button[contains(@class, 'lmg-btn--red') and normalize-space(.)='Delete']"
       Then  I wait for element "//h3[@class='modal-title' and text()='Delete device']" to be visible
-      And   I wait for 2 seconds
       And I click on "//*[contains(@class, 'modal-content-remove-device')]//button[contains(@class, 'lmg-btn--red') and normalize-space(.)='Delete']"
       Then I verify element "//*[contains(@class, 'el-message__content') and contains(normalize-space(.), 'Device deleted')]" exists
 
