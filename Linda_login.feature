@@ -27,5 +27,17 @@ Feature: LinkMyGear Application Login
       | alena9tester+1@gmail.com | Hello    | //h5[contains(text(),'Login to Your Account')] |
       | alena9tester@gmail.com   | 13548    | //h5[contains(text(),'Login to Your Account')] |
 
+  Scenario Outline: Login with various credentials
+    When I fill "<username>" in element "//input[@name='username']"
+    And I fill "<password>" in element "//input[@name='password']"
+    And I click on "//button[text()=' Login ']"
+    Then I verify element "<verification_elements>" exists
+
+    Examples:
+      | username               | password | verification_elements                |
+      | alena9tester@gmail.com | Hello    | //h3[contains(text(), 'My device ')] |
+
+
+
 
 
