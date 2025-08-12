@@ -17,6 +17,7 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h5" contains text "Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
 
+
   Scenario: Login successful with
     And Login with following credentials
       | username                      | password |
@@ -29,4 +30,3 @@ Feature: LinkMyGear Application Login
       | username | pcs.automationclass@gmail.com |
       | password | 1234567                       |
     Then I verify element "//h3[contains(text(), 'My devices')]" exists
-
