@@ -11,7 +11,7 @@ Feature: Change Password
     Then I click on "//a[@class='profile-btn hidden-on-tablet']"
 
   Scenario: Change password with table
-    And Fill out with following table:
+    And Fill out change password with following data from table
       | locator                                                                                    | value       |
       | "//input[@class='el-input__inner' and @id=(//label[contains(.,'Current password')]/@for)]" | Hello       |
       | "//input[@class='el-input__inner' and @id=(//label[contains(.,'New password')]/@for)]"     | NewPassword |

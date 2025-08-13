@@ -10,7 +10,7 @@ Feature: Fill Out My Profile
     Then I click on "//a[@class='profile-btn hidden-on-tablet']"
 
   Scenario: Fill out my profile with table
-    And Fill out with following table:
+    And Fill out my profile with following data from table
       | locator                                                                            | value         |
       | "//input[@class='el-input__inner' and @id=//label[contains(.,'First name')]/@for]" | Alena         |
       | "//input[@class='el-input__inner' and @id=//label[contains(.,'Last name')]/@for]"  | Tester        |
