@@ -12,9 +12,10 @@ Feature: Change Password
 
   Scenario: Change password with table
     And Fill out with following table:
-      | locator                                                                                    | value       |
-      | "//input[@class='el-input__inner' and @id=(//label[contains(.,'Current password')]/@for)]" | Hello       |
-      |                                                                                            | NewPassword |
-      |                                                                                            | NewPassword |
-    Then I click on "//button[contains(.,' Confirm ')]"
+      | locator                                                                                        | value       |
+      | "//input[@class='el-input__inner' and @id=(//label[contains(.,'Current password')]/@for)]"     | Hello       |
+      | "//input[@class='el-input__inner' and @id=(//label[contains(.,'New password')]/@for)]"         | NewPassword |
+      | "//input[@class='el-input__inner' and @id=(//label[contains(.,'Confirm new password')]/@for)]"
+      | NewPassword                                                                                    |
+    Then I click on "//button[contains(.,' Change password ')]"
 
