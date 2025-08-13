@@ -9,7 +9,7 @@ class Page:
     """
     Page class to interact with web pages.
     """
-    
+
     def __init__(self, page: PlaywrightPage):
         """
         Initialize the page.
