@@ -11,9 +11,11 @@ Feature: Fill Out My Profile
 
   Scenario: Fill out my profile with table
     And Fill out with following table:
-      | locator                                                                            | value      |
-      | "//input[@class='el-input__inner' and @id=//label[contains(.,'First name')]/@for]" | Alena      |
-      | "//input[@class='el-input__inner' and @id=//label[contains(.,'Last name')]/@for]"  | Tester     |
+      | locator                                                                            | value         |
+      | "//input[@class='el-input__inner' and @id=//label[contains(.,'First name')]/@for]" | Alena         |
+      | "//input[@class='el-input__inner' and @id=//label[contains(.,'Last name')]/@for]"  | Tester        |
+      | "//div[@class='phone-input-box']//div[@class='el-select__selection']"              | United States |
+      | "//div[@class='phone-input-box']//input[@class='el-input__inner']"                 | 1112587414    |
     Then I click on "//button[contains(.,' Confirm ')]"
 
 
