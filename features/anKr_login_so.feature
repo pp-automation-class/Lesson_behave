@@ -7,11 +7,11 @@ Feature: LinkMyGear Application Login
     When I fill "<password>" in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
     And I verify element "<verification_element>" exists
-    And
+    When I wait for 2 seconds
 
     Examples:
       | username                 | password | verification_element                                    |
-      | akr.autotest@gmail.com   | 12345    | //h3[contains(text(), 'My devices ')]                   |
+      | akr.autotest@gmail.com   | 12345    |  //h3[contains(text(), 'My devices ')]                 |
       | akr.autotest+1@gmail.com | 12345    | //p[text()='Sorry, unrecognized username or password.'] |
       | akr.autotest+2@gmail.com | 13579    | //p[text()='Sorry, unrecognized username or password.'] |
       | autotest@gmail.com       | 13579    | //p[text()='Sorry, unrecognized username or password.'] |
