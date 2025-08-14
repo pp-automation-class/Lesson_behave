@@ -1,7 +1,8 @@
 Feature: LinkMyGear Application Login
 
   Background:
-    Given I navigate to "https://dev.linkmygear.com"
+#    Given I navigate to "https://dev.linkmygear.com"
+    Given I navigate to "dev" environment
     And I verify element "//h5" contains text "Account"
 
   Scenario: Successful user login with valid credentials
@@ -29,3 +30,5 @@ Feature: LinkMyGear Application Login
       | username | pcs.automationclass@gmail.com |
       | password | 1234567                       |
     Then I verify element "//h3[contains(text(), 'My devices')]" exists
+    Then I wait for 3 seconds
+
