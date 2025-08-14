@@ -17,7 +17,6 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h5" contains text "Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
 
-
   Scenario: Login successful with
     And Login with following credentials
       | username                      | password |
