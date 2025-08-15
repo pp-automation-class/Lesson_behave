@@ -36,3 +36,4 @@
 # name = "Al ice"
 # print(name [:5])
 
+coordinates = [ 10.0, 20.0]
