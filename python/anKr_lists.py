@@ -83,7 +83,7 @@
 # print(type(student))
 
 # 4 Set
-# values = [1, 2, 3, 3, 4, 5, 5]
+# values = [1, 2, 3, 3, 4, 5, 5]_
 
 # values = (1, 2, 3, 3, 4, 5, 5)
 
