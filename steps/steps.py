@@ -19,6 +19,15 @@ def navigate_to_url(context, url):
     context.page.navigate(url)
 
 
+@step('I navigate to "{env}" environment')
+def navigate_to_env(context, env):
+    environments = {
+        'dev': 'https://test:FjeKB9ySMzwvDUs2XACpfu@dev.linkmygear.com',
+        'prod': 'https://app.linkmygear.com'
+    }
+    context.page.navigate(environments[env])
+
+
 @step('I click on "{xpath}"')
 def click_on_element(context, xpath):
     """
@@ -82,18 +91,19 @@ def wait_for_element(context, xpath):
     """
     context.page.wait_for_element(xpath)
 
+
 @step('Login with following credentials')
 def login_with_credentials(context):
     for row in context.table:
         username = row['username']
         password = row['password']
-        
+
         if username != 'Skip':
             context.page.fill_element("//input[@name='username']", username)
-        
+
         if password != 'Skip':
             context.page.fill_element("//input[@name='password']", password)
-            
+
         context.page.click_element("//button[text()=' Login ']")
 
 
@@ -109,20 +119,20 @@ def login_with_credentials_from_table(context):
     """
     username = None
     password = None
-    
+
     for row in context.table:
         key = row[0]
         value = row[1]
-        
+
         if key == 'username':
             username = value
         elif key == 'password':
             password = value
-    
+
     if username and username != 'Skip':
         context.page.fill_element("//input[@name='username']", username)
-    
+
     if password and password != 'Skip':
         context.page.fill_element("//input[@name='password']", password)
-        
+
     context.page.click_element("//button[text()=' Login ']")
