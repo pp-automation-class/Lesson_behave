@@ -93,6 +93,6 @@
 
 # values = set([1, 2, 3 , 4, "apple", "banana", "apple"])
 
-values = list(set([1, 2, 3 , 4, "apple", "banana", "apple"]))
-print(values)
-print(type(values))
+# values = list(set([1, 2, 3 , 4, "apple", "banana", "apple"]))
+# print(values)
+# print(type(values))
