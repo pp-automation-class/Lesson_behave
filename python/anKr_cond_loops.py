@@ -1,4 +1,4 @@
-
+# Conditional Statement in Python
 # answer = int(input("What is your age?"))
 
 # if answer < 5:
@@ -74,22 +74,81 @@
 # if not name:
 #      print("Empty!")
 
-answer = int(input("What is your age?"))
+# answer = int(input("What is your age?"))
 
 # if answer >= 5:
 #     print("Greater than 5")
 #     if answer >= 10:
 #         print("Greater than 10")
 
-if answer < 5:
-    print("Less than 5")
-elif answer < 10:
-    print("Less than 10")
-elif answer < 15:
-    print("Less than 15")
-else:
-    print("Greater than 15")
+# if answer < 5:
+#     print("Less than 5")
+# elif answer < 10:
+#     print("Less than 10")
+# elif answer < 15:
+#     print("Less than 15")
+# else:
+#     print("Greater than 15")
+#
+# print("End of program")
+
+
+# Loops in Python
+
+# cars = ["BMW", "Mercedes", "Audi", "Toyota"]
+
+# print(cars[0])
+# print(cars[1])
+# print(cars[2])
+# print (cars[3])
+
+# cars = ["BMW", "Mercedes", "Audi", "Toyota", "Ford", "Honda", "Tesla"]
+# for car in cars:
+#     print(car)
+
+# name = "Alice"
+# for letter in name:
+#     print(letter)
+
+# for i in range(10):
+#     print(i)
+
+# for i in range(5, 10):
+#     print(i)
+
+# for i in range(5):
+#     print("Hello")
+
+# for _ in range(5):
+#     print("Hello")
+
+# for i in range(5):
+#     if i !=3:
+#         print(i)
+#
+# for i in range(5):
+#     if i !=3:
+#         print(i)
+#     else:
+#         print("skipping")
+
+# for i in range(5):
+#     if i == 2:
+#         break
+#     print(i)
+
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+
+
 
 print("End of program")
+
+
+
+
+
 
 
