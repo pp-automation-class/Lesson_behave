@@ -20,6 +20,37 @@
 # print(name[:2])
 # print(name[:-1])
 
-coordinates = (10.0, "abc", 20.0, True)
-print(coordinates[-1])
-print(type(coordinates[-1]))
+# tuples
+# coordinates = (10.0, "abc", 20.0, True)
+# print(coordinates[-1])
+# print(type(coordinates[-1]))
+
+# dict
+student = ["Elza", 21, "KM589746"]
+# student[0] = "Bob"
+# student.append("kodos1")
+# student.append("kodos2")
+# student.append("kodos3")
+# student.append("kodos4")
+# student.append("kodos5")
+# student = {"name": "Elza", "age": 21, "id": "KM589746"}
+# student["name"] = "Bob"
+# student["address"] = "Chicago"
+# print(student["name"])
+# print(student["age"])
+# print(student)
+# print(type(student))
+#
+# # set
+# values = {1, 2, 3, 4, 4, 5}
+# print(values)
+# print(type(values))
+
+values = list(set([1,2,3,4, "apple", "banana", "apple"]))
+print(values)
+print(type(values))
+
+
+
+
+
