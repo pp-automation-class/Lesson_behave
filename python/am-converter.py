@@ -13,45 +13,53 @@ core_dictionary = [ {"unit":"Mass/Weight",
                      }
                   ]
 
-def select_unit(units_list):
+def output_units(units_list):
     count = 1
-    print("Select:")
+    print("Your choice:")
     for unit in units_list:
-        print(f"{count}.{unit['unit']}")
+        print(f"{count}. {unit['unit']}")
         count += 1
     print("0. Exit")
-    choice = input("=>")
-    if not choice.isdigit():
-        result = -1
-    else:
-        result = int(choice)
-        if not (result >= 0 and result <= len(units_list)):
-            result = -1
-    if result == -1:
-        print("\nInvalid choice. Enter number of the unit or 0 for exit.\n")
+
+
+def select_unit(units_list):
+    result = -1
+    while result == -1:
+        output_units(units_list)
+        choice = input("=>")
+        if choice.isdigit():
+            result = int(choice)
+            if not (result >= 0 and result <= len(units_list)): result = -1
+        if result == -1: print("\nInvalid choice. Enter number of the unit or 0 for exit.\n")
     return result
 
+def convert_units(item_index,units_list):
+    quantity = -1
+    while quantity:
+        print(f"Enter the quantity of {units_list[item_index]['unit']}")
+        print("0. Exit")
+        quantity = input("=>")
+        try:
+            quantity = float(quantity)
+            if not quantity: break
+            print(quantity)
+        except ValueError:
+            quantity = -1
 
 
 
-while True:
+
+#main code
+print("Welcome to Unit Converter!")
+choice = -1
+while choice:
     choice = select_unit(core_dictionary)
-    match choice:
-        case -1:
-            pass
-        case 0:
-            break
-        case _:
-            print(f"\nYou have selected {core_dictionary[choice-1]['unit']}")
-            while True:
+    if choice :
+            print(f"\n{core_dictionary[choice-1]['unit']}")
+            choice_item = -1
+            while choice_item:
                 choice_item = select_unit(core_dictionary[choice-1]["items"])
-                match choice_item:
-                    case -1:
-                        pass
-                    case 0:
-                        break
-                    case _:
-                        print(f"\nCalculations {core_dictionary[choice-1]['items'][choice_item-1]['unit']}")
+                if choice_item: convert_units( choice_item-1, core_dictionary[choice-1]["items"] )
 
 print("\nHave a nice day!")
 
