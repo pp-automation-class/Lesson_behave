@@ -37,12 +37,18 @@ def convert_units(item_index,units_list):
     quantity = -1
     while quantity:
         print(f"Enter the quantity of {units_list[item_index]['unit']}")
-        print("0. Exit")
+        print("0. choice the unit")
         quantity = input("=>")
         try:
             quantity = float(quantity)
             if not quantity: break
-            print(quantity)
+            #
+            coefficient = 1/units_list[item_index]["value"]
+            for unit in units_list:
+                result = round(unit['value'] * coefficient * quantity, 4)
+                print(f"{unit['unit']}: {result}")
+            print("\n")
+            #
         except ValueError:
             quantity = -1
 
