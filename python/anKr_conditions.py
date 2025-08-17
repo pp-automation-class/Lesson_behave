@@ -44,7 +44,7 @@
 #     print(" 5")
 
 
-answer = int(input("What is your age?"))
+# answer = int(input("What is your age?"))
 # if True:
 #     print("Not Equal 5")
 
@@ -54,9 +54,41 @@ answer = int(input("What is your age?"))
 # if not False:
 #     print("Not Equal 5")
 
-arr = [1, 2, 3, 4, 5]
-if not False:
-    print("Full array")
+# arr = [1, 2, 3, 4, 5]
+# if arr:
+#     print("Full array")
+
+# arr = []
+# if not arr:
+#      print("Full array")
+
+# name = "Alice"
+# if name:
+#      print("Full array")
+
+# name = ""
+# if name:
+#      print("Full array")
+
+# name = ""
+# if not name:
+#      print("Empty!")
+
+answer = int(input("What is your age?"))
+
+# if answer >= 5:
+#     print("Greater than 5")
+#     if answer >= 10:
+#         print("Greater than 10")
+
+if answer < 5:
+    print("Less than 5")
+elif answer < 10:
+    print("Less than 10")
+elif answer < 15:
+    print("Less than 15")
+else:
+    print("Greater than 15")
 
 print("End of program")
 
