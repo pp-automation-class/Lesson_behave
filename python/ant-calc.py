@@ -15,17 +15,17 @@ while True:
                              "Select an option: ")
             if type_of_calc == "1":
                 answer = float(input("Enter a number of miles:"))
-                print(f"{answer} miles is {answer * conv_rate["mi"]} kilometers")
+                print(f"{answer} miles is {round(answer * conv_rate['mi'], 2)} kilometers")
                 time.sleep(2)
 
             elif type_of_calc == "2":
                 answer = float(input("Enter a number of feet:"))
-                print(f"{answer} miles is {answer * conv_rate["ft"]} meters")
+                print(f"{answer} miles is {round(answer * conv_rate["ft"], 2)} meters")
                 time.sleep(2)
 
             elif type_of_calc == "3":
                 answer = float(input("\nEnter a number of inches:"))
-                print(f"{answer} inches is {answer * conv_rate["in"]} centimeters")
+                print(f"{answer} inches is {round(answer * conv_rate["in"], 2)} centimeters")
                 time.sleep(2)
 
             elif type_of_calc == "b":
@@ -43,17 +43,17 @@ while True:
                              "Select an option: ")
             if type_of_calc == "1":
                 answer = float(input("Enter a number of kilometers:"))
-                print(f"{answer} kilometers is {answer / conv_rate["mi"]} miles")
+                print(f"{answer} kilometers is {round(answer / conv_rate["mi"], 2)} miles")
                 time.sleep(2)
 
             elif type_of_calc == "2":
                 answer = float(input("Enter a number of meters:"))
-                print(f"{answer} meters is {answer / conv_rate["ft"]} feet")
+                print(f"{answer} meters is {round(answer / conv_rate["ft"], 2)} feet")
                 time.sleep(2)
 
             elif type_of_calc == "3":
                 answer = float(input("Enter a number of centimeters:"))
-                print(f"{answer} centimeters is {answer / conv_rate["in"]} inches")
+                print(f"{answer} centimeters is {round(answer / conv_rate["in"], 2)} inches")
                 time.sleep(2)
 
             elif type_of_calc == "b":
