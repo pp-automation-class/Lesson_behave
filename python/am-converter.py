@@ -75,9 +75,24 @@ def select_unit(units_list):
     return result
 
 def pretty_float(number):
-    if (number < 0.001 or number > 999999999999): return f"{number:,.4e}"
-    elif abs(number - round(number,0)) < 0.001 : return f"{number:,.0f}"
-    else: return f"{number:,.5f}"
+    result = f"{number:,.6f}"
+    if (number < 0.001 or number > 999999999999):
+        result = f"{number:,.6e}"
+    elif number > 99999:
+        result = f"{number:,.0f}"
+    elif number > 9999:
+        result = f"{number:,.1f}"
+    elif number > 999:
+        result = f"{number:,.2f}"
+    elif number > 99:
+        result = f"{number:,.3f}"
+    elif number > 9:
+        result = f"{number:,.4f}"
+    elif abs(number - round(number,0)) < 0.001 :
+        result = f"{number:,.0f}"
+    if result.find('.') != -1:
+        result = result.rstrip("0").rstrip(".")
+    return result   
 
 def convert_units(item_index,units_list):
     quantity = -1
