@@ -45,77 +45,77 @@
 # print(f"{answer} miles is {answer*1.609} kilometers")
 
 
-# print("Hello! Miles to kilometers calculator")
-# while True:
-#     type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
-#
-#     if type_of_calc == 'm':
-#         answer = float(input("Enter a number of miles: "))
-#         print(f"{answer} miles is {answer * 1.609} kilometers")
-#     elif type_of_calc == 'k':
-#         answer = float(input("Enter a number of kilometers: "))
-#         print(f"{answer} kilometers is {answer / 1.609} miles ")
-#     elif type_of_calc == 'q':
-#         print("Goodbye")
-#         break
-#     else:
-#         print("Invalid input")
+print("Hello! Miles to kilometers calculator")
+while True:
+    type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
+
+    if type_of_calc == 'm':
+        answer = float(input("Enter a number of miles: "))
+        print(f"{answer} miles is {answer * 1.609} kilometers")
+    elif type_of_calc == 'k':
+        answer = float(input("Enter a number of kilometers: "))
+        print(f"{answer} kilometers is {answer / 1.609} miles ")
+    elif type_of_calc == 'q':
+        print("Goodbye")
+        break
+    else:
+        print("Invalid input")
 
 
 #CALCULATOR 4  Miles to kilometers calculator with 2 decimal places
 
-# print("Hello! Miles to kilometers calculator")
-#
-# while True:
-#     type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
-#
-#     if type_of_calc == 'm':
-#         answer = float(input("Enter a number of miles: "))
-#         result = answer * 1.609
-#         print(f"{answer} miles is {result:.2f} kilometers")
-#     elif type_of_calc == 'k':
-#         answer = float(input("Enter a number of kilometers: "))
-#         result = answer / 1.609
-#         print(f"{answer} kilometers is {result:.2f} miles ")
-#     elif type_of_calc == 'q':
-#         print("Goodbye")
-#         break
-#     else:
-#         print("Invalid input")
+print("Hello! Miles to kilometers calculator")
+
+while True:
+    type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
+
+    if type_of_calc == 'm':
+        answer = float(input("Enter a number of miles: "))
+        result = answer * 1.609
+        print(f"{answer} miles is {result:.2f} kilometers")
+    elif type_of_calc == 'k':
+        answer = float(input("Enter a number of kilometers: "))
+        result = answer / 1.609
+        print(f"{answer} kilometers is {result:.2f} miles ")
+    elif type_of_calc == 'q':
+        print("Goodbye")
+        break
+    else:
+        print("Invalid input")
 
 
 #CALCULATOR 5  Fahrenheit to Celsius
 
-# print("Hello! Fahrenheit to Celsius calculator")
-#
-# while True:
-#     type_of_calc = input("Enter 'f' for Fahrenheit, 'c' for Celsius or or 'q' to quit: ")
-#
-#     if type_of_calc == 'f':
-#         temp_f = float(input("Enter temperature in Fahrenheit: "))
-#         temp_c = (temp_f - 32) * 5 / 9
-#         print(f"{temp_f:.1f}°F is {temp_c:.1f}°C")
-#
-#     elif type_of_calc == 'c':
-#         temp_c = float(input("Enter temperature in Celsius: "))
-#         temp_f = (temp_c * 9 / 5) + 32
-#         print(f"{temp_c:.1f}°C is {temp_f:.1f}°F")
-#
-#     elif type_of_calc == 'q':
-#         print("Goodbye")
-#         break
-#
-#     else:
-#         print("Invalid input")
+print("Hello! Fahrenheit to Celsius calculator")
+
+while True:
+    type_of_calc = input("Enter 'f' for Fahrenheit, 'c' for Celsius or or 'q' to quit: ")
+
+    if type_of_calc == 'f':
+        temp_f = float(input("Enter temperature in Fahrenheit: "))
+        temp_c = (temp_f - 32) * 5 / 9
+        print(f"{temp_f:.1f}°F is {temp_c:.1f}°C")
+
+    elif type_of_calc == 'c':
+        temp_c = float(input("Enter temperature in Celsius: "))
+        temp_f = (temp_c * 9 / 5) + 32
+        print(f"{temp_c:.1f}°C is {temp_f:.1f}°F")
+
+    elif type_of_calc == 'q':
+        print("Goodbye")
+        break
+
+    else:
+        print("Invalid input")
 
 # CALCULATOR 5  Fahrenheit to Celsius
 
 print("Hello! Tip calculator")
 
 while True:
-    choice = input("Enter 't' to calculate tip or 'q' to quit: ")
+    type_of_calc = input("Enter 't' to calculate tip or 'q' to quit: ")
 
-    if choice == 't':
+    if type_of_calc == 't':
         bill = float(input("Enter the bill amount: $"))
         tip_percent = float(input("Enter the tip percentage (%): "))
         tip = bill * (tip_percent / 100)
@@ -123,7 +123,7 @@ while True:
         print(f"Bill: ${bill:.2f}")
         print(f"Tip:  ${tip:.2f}")
         print(f"Total to pay: ${total:.2f}")
-    elif choice == 'q':
+    elif type_of_calc == 'q':
         print("Goodbye")
         break
     else:
