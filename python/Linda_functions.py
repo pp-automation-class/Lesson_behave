@@ -51,7 +51,15 @@ def grett(name):
 greeting = grett("Linda")
 print(greeting)
 
+def get_info (name, age):
+    return "Linda", 25
+name, age = get_info("Linda", 25)
+print(f"Name: {name}, Age: {age}")
 
 
+# 4. Function with parameters and Return Value
 
-
+def add(a,b):
+    return a + b
+sum_result = add(1,2)
+print(sum_result)
