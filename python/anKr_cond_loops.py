@@ -132,19 +132,56 @@
 #     else:
 #         print("skipping")
 
+
 # for i in range(5):
 #     if i == 2:
 #         break
 #     print(i)
 
-for i in range(5):
-    if i == 2:
-        continue
-    print(i)
+# for i in range(5):
+#     if i == 2:
+#         continue
+#
 
+# print("End of program")
 
+# While in Python
 
-print("End of program")
+# while True:
+#     print("Hello")
+
+# i = 0
+# while i < 5:
+#     print(i)
+
+# i = 0
+# while i < 5:
+#     print(i)
+#     i = i + 1
+
+# i = 0
+# while i < 5:
+#     print(i)
+#     i += 1
+
+# i = 0
+# result = True
+# while result:
+#     print(i)
+#     i += 1
+#     if i == 5:
+#         result = False
+#     while i == 5:
+#         result = False
+
+# print("End of program")
+
+fruits = [ ['apple', 'banana', 'orange'],["mango", "orange"]]
+
+for fruit in fruits:
+    for f in fruit:
+        print(f)
+
 
 
 
