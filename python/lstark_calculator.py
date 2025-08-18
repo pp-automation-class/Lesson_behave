@@ -1,17 +1,24 @@
-# HW by Laura Stark
-
-#Value1 = [0, 1,  2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-#value_1 = float(input("Enter value 1: "))
-#value_2 = float(input("Enter value 2: "))
+# HW - Calculator by Laura Stark
 
 print("Calculator")
 
 while True:
-    type_of_operation = input(Enter )
+    value_1 = float(input("Enter value 1: "))
+    operation = input("Enter type of operation:")
+    value_2 = float(input("Enter value 2: "))
 
+    if operation == "+":
+        print(f"{value_1} + {value_2} = {value_1 + value_2}")
 
+    elif operation == "-":
+        print(f"{value_1} - {value_2} = {value_1 - value_2}")
 
-print (int(input("Enter Value1 - number from 0 to 10")))
+    elif operation == "*":
+        print(f"{value_1} * {value_2} = {value_1 * value_2}")
 
-print (f*{answer} )
+    elif operation == "/":
+        if value_2 == 0:
+            print("Error: Division by zero is not allowed.")
+            continue
+        else:
+            print(f"{value_1} / {value_2} = {value_1 / value_2}")
