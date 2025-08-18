@@ -1,15 +1,56 @@
 
-core_dictionary = [ {"unit":"Mass/Weight",
-                     "items":[{"unit":"Kilogram (kg)","value":1},
-                              {"unit":"Pound (lb)","value":2.204623},
-                              {"unit":"Ounce (oz)","value":35.273962}
+core_dictionary = [ {"unit": "Area",
+                     "items": [{"unit": "Square Mile (mi²)", "value": 0.386102},
+                               {"unit": "Square Yard (yd²)", "value": 1195990},
+                               {"unit": "Square Foot (ft²)", "value": 10763910},
+                               {"unit": "Square Inch (in²)", "value": 1550003100},
+                               {"unit": "Square Kilometre (km²)", "value": 1},
+                               {"unit": "Hectare (ha)", "value": 100},
+                               {"unit": "Acre", "value": 247.105381},
+                               {"unit": "Square Metre (m²)", "value": 1000000},
+                               {"unit": "Square Centimetre (cm²)", "value": 10000000000}
                               ]
                      },
                     {"unit": "Length",
                      "items": [{"unit": "Metre (m)", "value": 1},
                                {"unit": "Inch (in)", "value": 39.370079},
-                               {"unit": "Foot (ft)", "value": 3.28084}
-                               ]
+                               {"unit": "Foot (ft)", "value": 3.28084},
+                               {"unit": "Yard (yd)", "value": 1.093613},
+                               {"unit": "Mile (mi)", "value": 0.000621371},
+                               {"unit": "Kilometre (km)", "value": 0.001},
+                               {"unit": "Centimetre (cm)", "value": 100},
+                               {"unit": "Millimetre (mm)", "value": 1000},
+                               {"unit": "Micrometre (µm)", "value": 1000000},
+                               {"unit": "Astronomical Unit (AU)", "value": 6.6845871088e-12},
+                               {"unit": "Light Year (ly)", "value": 1.05702341e-16},
+                               {"unit": "Parsec (pc)", "value": 3.240779282e-17}
+                              ]
+                     },
+                    {"unit":"Mass/Weight",
+                     "items":[{"unit":"Kilogram (kg)","value":1},
+                              {"unit":"Pound (lb)","value":2.204623},
+                              {"unit":"Ounce (oz)","value":35.273962},
+                              {"unit":"Milligram (mg)","value":1000000},
+                              {"unit":"Gram (g)","value":1000},
+                              {"unit":"Tonne (t)","value":0.001},
+                              {"unit":"Stone (st)","value":0.157473},
+                              {"unit":"Carat","value":5000}
+                             ]
+                     },
+                    {"unit": "Volume and Liquid Capacity",
+                     "items":  [{"unit":"Millilitre (ml)", "value":1000},
+                                {"unit":"Litre (l)", "value":1},
+                                {"unit":"Teaspoon (US)", "value":202.884136},
+                                {"unit":"Tablespoon (US)", "value":67.628045},
+                                {"unit":"Cup (US)", "value":4.226753},
+                                {"unit":"Pint (US)", "value":2.113376},
+                                {"unit":"Quart (US)", "value":1.056688},
+                                {"unit":"Gallon (US)", "value":0.264172},
+                                {"unit":"Fluid Ounce (US)", "value":33.814023},
+                                {"unit":"Cubic Centimetre (cm³)", "value":1000},
+                                {"unit":"Cubic Metre (m³)", "value":0.001},
+                                {"unit":"Cubic Foot (ft³)", "value":0.035315}
+                              ]
                      }
                   ]
 
@@ -33,6 +74,11 @@ def select_unit(units_list):
         if result == -1: print("\nInvalid choice. Enter number of the unit or 0 for exit.\n")
     return result
 
+def pretty_float(number):
+    if (number < 0.001 or number > 999999999999): return f"{number:,.4e}"
+    elif abs(number - round(number,0)) < 0.001 : return f"{number:,.0f}"
+    else: return f"{number:,.5f}"
+
 def convert_units(item_index,units_list):
     quantity = -1
     while quantity:
@@ -42,10 +88,11 @@ def convert_units(item_index,units_list):
         try:
             quantity = float(quantity)
             if not quantity: break
+            if quantity < 0: continue
             #
             coefficient = 1/units_list[item_index]["value"]
             for unit in units_list:
-                result = round(unit['value'] * coefficient * quantity, 4)
+                result = pretty_float(unit['value'] * coefficient * quantity)
                 print(f"{unit['unit']}: {result}")
             print("\n")
             #
