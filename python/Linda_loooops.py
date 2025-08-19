@@ -1,0 +1,46 @@
+cars = ["audi", "bmw", "ford", "mercedes", "tesla", "volvo"]
+# # print(cars[0])  # audi
+# # print(cars[1])  # bmw
+# # print(cars[2])  # ford
+# # print(cars[3])  # mercedes
+# # print(cars[4])  # tesla
+
+# for car in cars:
+#     print(car)
+#
+# name = "Linda"
+# for letter in name:
+#     print(letter)
+
+# for i in range(7,10):
+#     print(i)
+
+# for i in range (3):
+#     print("Hello")
+
+# for i in range(5):
+#     if i != 2:
+#         print(i)
+#     else:
+#         print("skipped")
+
+# for i in range(5):
+#     if i == 2:
+#         break
+#     print(i)
+
+# for i in range(5):
+#     if i == 2:
+#         continue
+#     print(i)
+
+# while True:
+#     print("Hello")
+#     if input() == 'q':
+#         break
+
+i = 10
+while i < 100:
+    print(i)
+    i += 2
+print("End of program")
