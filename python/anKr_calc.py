@@ -180,12 +180,12 @@ while True:
 
     if type_of_conversion == 'k':
         answer = float(input("Enter number of kilograms:"))
-        print(f"{answer} kilograms is {answer * 2.20462} pounds")
+        print(f"{answer} kilograms is {answer * 2.20} pounds")
         #print("\n")
 
     elif type_of_conversion == 'p':
         answer = float(input("Enter number of pounds:"))
-        print(f"{answer} pounds is {answer / 2.20462} kilograms")
+        print(f"{answer} pounds is {answer / 2.20} kilograms")
         #
     elif type_of_conversion == 'stop':
         print("Goodbye!")
