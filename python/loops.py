@@ -41,9 +41,8 @@
 #
 # print("End of program")
 
-# fruits = [["apple", "banana", "cherry"], ["mango", "orange"]]
-#
-# for fruit in fruits:
-#     for f in fruit:
-#         print(f)
+fruits = [["apple", "banana", "cherry"], ["mango", "orange"]]
 
+for fruit in fruits:
+    for f in fruit:
+        print(f)

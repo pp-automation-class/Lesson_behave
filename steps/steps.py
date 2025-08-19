@@ -7,13 +7,6 @@ from behave import step
 
 @step('I navigate to "{url}"')
 def navigate_to_url(context, url):
-    """
-    Navigate to a URL.
-    
-    Args:
-        context: Behave context
-        url: URL to navigate to
-    """
     if url == 'https://dev.linkmygear.com':
         url = 'https://test:FjeKB9ySMzwvDUs2XACpfu@dev.linkmygear.com'
     context.page.navigate(url)
@@ -32,10 +25,9 @@ def navigate_to_env(context, env):
 def click_on_element(context, xpath):
     """
     Click on an element identified by XPath.
-    
-    Args:
-        context: Behave context
-        xpath: XPath selector for the element
+
+    :param context: Behave context
+    :param xpath: XPath selector for the element
     """
     context.page.click_element(xpath)
 
@@ -136,3 +128,39 @@ def login_with_credentials_from_table(context):
         context.page.fill_element("//input[@name='password']", password)
 
     context.page.click_element("//button[text()=' Login ']")
+
+
+@step('I login as "{user_type}"')
+def login_as_user(context, user_type):
+    """
+    Args:
+        user_type: Type of user to login as
+        context (behave.runner.Context):
+    """
+    # if user_type == 'user':
+    #     user_name = 'pcs.automationclass@gmail.com'
+    #     password = '1234567'
+    # elif user_type == 'admin':
+    #     user_name = 'admin@gmail.com'
+    #     password = 'admin1234'
+    # else:
+    #     user_name = 'pcs.automationclass@gmail.com'
+    #     password = 'xxxxxx'
+
+
+    user_credentials = {
+        "user": ("pcs.automationclass@gmail.com", "1234567"),
+        "admin": ("pcs.automationclass@gmail.com", "xxxxxx")
+    }
+
+    # fill username
+    user_name_xpath = "//input[@name='username']"
+    # fill_text_in_element(context, user_name, user_name_xpath)
+    fill_text_in_element(context, user_credentials[user_type][0], user_name_xpath)
+    # fill password
+    password_xpath = "//input[@name='password']"
+    # fill_text_in_element(context, password, password_xpath)
+    fill_text_in_element(context, user_credentials[user_type][1], password_xpath)
+    # Click button
+    login_button_xpath = "//button[text()=' Login ']"
+    click_on_element(context, login_button_xpath)

@@ -2,7 +2,7 @@
 Feature: LinkMyGear Application Login
 
   Background:
-    Given I navigate to "https://dev.linkmygear.com"
+    Given I navigate to "dev" environment
     And I verify element "//h5" contains text "Account"
 
   Scenario: Successful user login with valid credentials
