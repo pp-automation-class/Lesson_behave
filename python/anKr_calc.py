@@ -44,7 +44,7 @@
 # answer = float(input("Enter a number of miles: "))
 # print(f"{answer} miles is {answer*1.609} kilometers")
 
-# CALCULATOR 4  Miles to kilometers calculator with 2 decimal places
+# CALCULATOR 4 Miles to kilometers calculator with 2 decimal places
 
 print("Hello! Miles to kilometers calculator")
 while True:
@@ -63,7 +63,7 @@ while True:
         print("Invalid input" + "\n")
 #
 #
-# CALCULATOR 4  Miles to kilometers calculator with 2 decimal places
+# CALCULATOR 4 Miles to kilometers calculator with 2 decimal places
 #
 print("Hello! Miles to kilometers calculator")
 
