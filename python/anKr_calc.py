@@ -135,22 +135,22 @@ while True:
 
 # Identify usernames and how they are tired
 
-# def remind_to_rest(name, tired_level):
-#     print(f"{name}, you said your tiredness level is {tired_level}/10.")
-#
-#     if tired_level >= 8:
-#         print("You are very tired! Please take a proper break.")
-#     elif tired_level >= 5:
-#         print("You seem a bit tired. Try to relax for a while.")
-#     else:
-#         print("You're doing okay. Keep going, but don't forget to rest later!")
-#
-# remind_to_rest("Alice", 9)
-# remind_to_rest("Ivan", 4)
-# remind_to_rest("Maria", 7)
-# remind_to_rest("John", 10)
-#
-# print("End of program" + "\n")
+def remind_to_rest(name, tired_level):
+    print(f"{name}, you said your tiredness level is {tired_level}/10.")
+
+    if tired_level >= 8:
+        print("You are very tired! Please take a proper break.")
+    elif tired_level >= 5:
+        print("You seem a bit tired. Try to relax for a while.")
+    else:
+        print("You're doing okay. Keep going, but don't forget to rest later!")
+
+remind_to_rest("Alice", 9)
+remind_to_rest("Ivan", 4)
+remind_to_rest("Maria", 7)
+remind_to_rest("John", 10)
+
+print("End of program" + "\n")
 
 # Calculator of username's tiredness
 print("Hello! Username's tiredness calculator")
@@ -182,14 +182,29 @@ while True:
         answer = float(input("Enter number of kilograms:"))
         print(f"{answer} kilograms is {answer * 2.20} pounds")
         #print("\n")
-
     elif type_of_conversion == 'p':
         answer = float(input("Enter number of pounds:"))
         print(f"{answer} pounds is {answer / 2.20} kilograms")
-        #
-    elif type_of_conversion == 'stop':
-        print("Goodbye!")
+    elif type_of_calc == 'q':
+        print("Goodbye" + "\n")
         break
     else:
         print("Invalid input")
     print("End of program" + "\n")
+
+#Calculator Inches to centimeters
+
+print("Hello! Inches to cm converter")
+type_of_conversion = input("Enter 'in' for inches to centimeters or 'cm' for centimeters to inches: ")
+
+if type_of_conversion == 'in':
+    answer = float(input("Enter a number of inches:"))
+    print(f"{answer} cinches is {answer * 2.54} cm")
+elif type_of_conversion == 'cm':
+    answer = float(input("Enter a number of centimeters:"))
+    print(f"{answer} centimeters is {answer / 2.54} inches")
+elif type_of_calc == 'q':
+    print("Goodbye" + "\n")
+else:
+    print("Invalid input")
+print("Invalid input" + "\n")
