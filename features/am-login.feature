@@ -17,3 +17,14 @@ Feature: LinkMyGear Application Login
       | password | r+WLLX9qwx^:>:3       |
     Then I verify element "//h3[contains(text(), 'My device')]" exists
 
+  Scenario: Login as user
+    When I login special as "user"
+
+  Scenario: Login as admin
+    When I login special as "admin"
+
+  Scenario: Login as guest
+    When I login special as "guest"
+
+  Scenario: Login as unknown
+    When I login special as "Vasya"
