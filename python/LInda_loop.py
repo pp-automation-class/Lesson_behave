@@ -22,9 +22,7 @@ from python.conditions import answer
 # if answer < 5:
 #     pass
 
-answer = int(input("What is your age? "))
-if answer < 5:
-    print("You are too young to play this game.")
+
 
 
 
