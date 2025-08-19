@@ -153,6 +153,7 @@ while True:
 # print("End of program" + "\n")
 
 # Calculator of username's tiredness
+print("Hello! Username's tiredness calculator")
 
 def remind_to_rest(name, tired_level):
     print(f"{name}, your tiredness level is {tired_level}/10.")
@@ -170,3 +171,25 @@ level = int(input("On a scale from 1 to 10, how tired are you? "))
 
 remind_to_rest(user_name, level)
 print("End of program" + "\n")
+
+#Calculator Kilograms to Pounds
+
+print("Helo! Kilograms to Pounds conversion program.")
+while True:
+    type_of_conversion = input("Enter 'k' for kilograms to pounds' or 'p' for pounds to kilograms:")
+
+    if type_of_conversion == 'k':
+        answer = float(input("Enter number of kilograms:"))
+        print(f"{answer} kilograms is {answer * 2.20462} pounds")
+        #print("\n")
+
+    elif type_of_conversion == 'p':
+        answer = float(input("Enter number of pounds:"))
+        print(f"{answer} pounds is {answer / 2.20462} kilograms")
+        #
+    elif type_of_conversion == 'stop':
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid input")
+    print("End of program" + "\n")
