@@ -44,6 +44,7 @@
 # answer = float(input("Enter a number of miles: "))
 # print(f"{answer} miles is {answer*1.609} kilometers")
 
+# CALCULATOR 4  Miles to kilometers calculator with 2 decimal places
 
 print("Hello! Miles to kilometers calculator")
 while True:
@@ -56,14 +57,14 @@ while True:
         answer = float(input("Enter a number of kilometers: "))
         print(f"{answer} kilometers is {answer / 1.609} miles ")
     elif type_of_calc == 'q':
-        print("Goodbye")
+        print("Goodbye" + "\n")
         break
     else:
-        print("Invalid input")
-
-
-#CALCULATOR 4  Miles to kilometers calculator with 2 decimal places
-
+        print("Invalid input" + "\n")
+#
+#
+# CALCULATOR 4  Miles to kilometers calculator with 2 decimal places
+#
 print("Hello! Miles to kilometers calculator")
 
 while True:
@@ -78,13 +79,13 @@ while True:
         result = answer / 1.609
         print(f"{answer} kilometers is {result:.2f} miles ")
     elif type_of_calc == 'q':
-        print("Goodbye")
+        print("Goodbye" + "\n")
         break
     else:
-        print("Invalid input")
-
-
-#CALCULATOR 5  Fahrenheit to Celsius
+        print("Invalid input" + "\n")
+#
+#
+# #CALCULATOR 5  Fahrenheit to Celsius
 
 print("Hello! Fahrenheit to Celsius calculator")
 
@@ -102,13 +103,14 @@ while True:
         print(f"{temp_c:.1f}°C is {temp_f:.1f}°F")
 
     elif type_of_calc == 'q':
-        print("Goodbye")
+        print("Goodbye" + "\n")
         break
 
     else:
-        print("Invalid input")
+        print("Invalid input" + "\n")
 
-# CALCULATOR 5  Fahrenheit to Celsius
+#
+# # CALCULATOR 5  Fahrenheit to Celsius
 
 print("Hello! Tip calculator")
 
@@ -124,8 +126,47 @@ while True:
         print(f"Tip:  ${tip:.2f}")
         print(f"Total to pay: ${total:.2f}")
     elif type_of_calc == 'q':
-        print("Goodbye")
+        print("Goodbye" + "\n")
         break
     else:
-        print("Invalid input")
+        print("Invalid input" + "\n")
 
+
+
+# Identify usernames and how they are tired
+
+# def remind_to_rest(name, tired_level):
+#     print(f"{name}, you said your tiredness level is {tired_level}/10.")
+#
+#     if tired_level >= 8:
+#         print("You are very tired! Please take a proper break.")
+#     elif tired_level >= 5:
+#         print("You seem a bit tired. Try to relax for a while.")
+#     else:
+#         print("You're doing okay. Keep going, but don't forget to rest later!")
+#
+# remind_to_rest("Alice", 9)
+# remind_to_rest("Ivan", 4)
+# remind_to_rest("Maria", 7)
+# remind_to_rest("John", 10)
+#
+# print("End of program" + "\n")
+
+# Calculator of username's tiredness
+
+def remind_to_rest(name, tired_level):
+    print(f"{name}, your tiredness level is {tired_level}/10.")
+
+    if tired_level >= 8:
+        print("You are very tired! Please take a proper break.")
+    elif tired_level >= 5:
+        print("You seem a bit tired. Try to relax for a while.")
+    else:
+        print("You're doing okay. Keep going, but rest later!")
+
+
+user_name = input("Enter your name: ")
+level = int(input("On a scale from 1 to 10, how tired are you? "))
+
+remind_to_rest(user_name, level)
+print("End of program" + "\n")

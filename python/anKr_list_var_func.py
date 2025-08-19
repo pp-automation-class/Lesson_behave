@@ -226,7 +226,7 @@
 # b = 22
 # summary(a,b)
 #
-# def        (num1, num2):
+# def (num1, num2):
 #     print(f"Sum = {num1 + num2}")
 # a = 1
 # b = 2
@@ -242,3 +242,11 @@
 # summary(a,b)
 #
 # print("End of program")
+
+def remind_to_rest():
+    print("I am tired!")
+    print("Have a rest!")
+
+remind_to_rest()
+print("End of program")
+
