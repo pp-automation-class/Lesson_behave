@@ -39,8 +39,24 @@ cars = ["audi", "bmw", "ford", "mercedes", "tesla", "volvo"]
 #     if input() == 'q':
 #         break
 
-i = 10
-while i < 100:
-    print(i)
-    i += 2
-print("End of program")
+# i = 10
+# while i < 100:
+#     print(i)
+#     i += 2
+# print("End of program")
+
+# fruits = [["apple", "banana", "cherry"], ["mango", "orange"]]
+# for fruit in fruits:
+#     print(fruit)
+
+# fruits = [["apple", "banana", "cherry"], ["mango", "orange"]]
+# for fruit in fruits:
+#     for f in fruit:
+#         print(f)
+
+print("Hello! Miles to kilometers calculator")
+answer = float(input("Enter a number of miles: "))
+print(f"{answer} miles is {answer * 1.609} kilometers")
+answer = float(input("Enter a number of Kilometers: "))
+print(f"{answer} kilometers is {answer / 1.609} miles")
+print("Goodbye!")
