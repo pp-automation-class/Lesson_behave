@@ -55,6 +55,9 @@ cars = ["audi", "bmw", "ford", "mercedes", "tesla", "volvo"]
 #         print(f)
 
 print("Hello! Miles to kilometers calculator")
+
+type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
+
 answer = float(input("Enter a number of miles: "))
 print(f"{answer} miles is {answer * 1.609} kilometers")
 answer = float(input("Enter a number of Kilometers: "))
