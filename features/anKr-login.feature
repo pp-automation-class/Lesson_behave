@@ -7,9 +7,7 @@ Feature: LinkMyGear Application Login
     And I verify element "//h5" contains text "Account"
 
   Scenario: Successful user login with valid credentials
-    When I fill "akr.autotest@gmail.com" in element "//input[@name='username']"
-    And I fill "12345" in element "//input[@name='password']"
-    And I click on "//button[text()=' Login ']"
+    When I login as "user"
     Then I verify element "//h3[contains(text(), 'My device ')]" exists
 
   Scenario: Unsuccessful user login with invalid credentials
