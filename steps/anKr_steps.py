@@ -1,5 +1,6 @@
 from behave import step
 
+
 @step('I login as "{user_type}"')
 def login_as_user(context, user_type):
     """
