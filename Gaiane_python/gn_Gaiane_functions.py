@@ -105,10 +105,9 @@ student = ["Elza", 21, "KM589746"]
 # print(type(quotient))
 
 
+
 def summary(num1, num2):
     print(f"Sum:{num1 + num2}")
-
-
 
 a = 15
 b = 5
@@ -125,3 +124,66 @@ summary(a, b)
 a = 30
 b = 6
 summary(a, b)
+
+
+def subtract(num1, num2):
+    print(f"Difference: {num1 - num2}")
+
+a = 15
+b = 5
+subtract(a, b)
+
+a = 40
+b = 8
+subtract(a, b)
+
+a = 20
+b = 5
+subtract(a, b)
+
+a = 30
+b = 6
+subtract(a, b)
+
+
+def multiply(num1, num2):
+    print(f"Product: {num1 * num2}")
+
+a = 15
+b = 5
+multiply(a, b)
+
+a = 40
+b = 8
+multiply(a, b)
+
+a = 20
+b = 5
+multiply(a, b)
+
+a = 30
+b = 6
+multiply(a, b)
+
+
+def divide(num1, num2):
+    if num2 != 0:
+        print(f"Quotient: {num1 / num2}")
+    else:
+        print("Error: division by zero is not allowed")
+
+a = 15
+b = 5
+divide(a, b)
+
+a = 40
+b = 8
+divide(a, b)
+
+a = 20
+b = 5
+divide(a, b)
+
+a = 30
+b = 6
+divide(a, b)
