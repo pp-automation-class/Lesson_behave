@@ -1,12 +1,12 @@
-cars = ["audi", "bmw", "ford", "mercedes", "tesla", "volvo"]
+cars = ["audi", "bmw", "ford", "mercedes", "tesla", "volvo", "toyota", "nissan"]
 # # print(cars[0])  # audi
 # # print(cars[1])  # bmw
 # # print(cars[2])  # ford
 # # print(cars[3])  # mercedes
 # # print(cars[4])  # tesla
 
-# for car in cars:
-#     print(car)
+for car in cars:
+    print(car)
 #
 # name = "Linda"
 # for letter in name:
@@ -54,12 +54,12 @@ cars = ["audi", "bmw", "ford", "mercedes", "tesla", "volvo"]
 #     for f in fruit:
 #         print(f)
 
-print("Hello! Miles to kilometers calculator")
-
-type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
-
-answer = float(input("Enter a number of miles: "))
-print(f"{answer} miles is {answer * 1.609} kilometers")
-answer = float(input("Enter a number of Kilometers: "))
-print(f"{answer} kilometers is {answer / 1.609} miles")
-print("Goodbye!")
+# print("Hello! Miles to kilometers calculator")
+#
+# type_of_calc = input("Enter 'm' for miles, 'k' for kilometers or or 'q' to quit: ")
+#
+# answer = float(input("Enter a number of miles: "))
+# print(f"{answer} miles is {answer * 1.609} kilometers")
+# answer = float(input("Enter a number of Kilometers: "))
+# print(f"{answer} kilometers is {answer / 1.609} miles")
+# print("Have a good day! Goodbye!")
