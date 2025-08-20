@@ -43,47 +43,53 @@ print('Hello! Welcome to calculator\n'
       'enter "*" for Multiplication \n'
       'enter "/" for Division \n'
       'enter "e" for Exponent \n'
-      'enter "p" for Percentage (a/b*100):\n'
+      'enter "p" for Percentage (a/b*100)\n'
+      'enter "ac" for All clear \n'
       'enter "q" to quit: ')
+a = float(input('Enter a: '))
+
 while True:
     type_of_calc = input('Enter function \n')
+    if type_of_calc == 'ac':
+        print('All clear')
+        a = float(input('Enter a: '))
+        type_of_calc = input('Enter function \n')
 
     if type_of_calc == '+':
-        a = float(input('Enter a: '))
         b = float(input('Enter b: '))
-        print(f'Summary = {a+b}\n')
+        def sum(a, b):
+            return a + b
+        a=sum(a, b)
+        print(f'Summary = {a}\n')
 
     elif type_of_calc == '-':
-        a = float(input('Enter a: '))
         b = float(input('Enter b: '))
         def minus(a, b):
             return a - b
-        print(f'Subtraction = {minus(a, b)}\n')
+        a=minus(a, b)
+        print(f'Subtraction = {a}\n')
     elif type_of_calc == '*':
-        a = float(input('Enter a: '))
         b = float(input('Enter b: '))
         def multiply(a, b):
             return a * b
-        print(f'Multiplication = {multiply(a, b)}\n')
+        a=multiply(a,b)
+        print(f'Multiplication = {a}\n')
     elif type_of_calc == '/':
-        a = float(input('Enter a: '))
         b = float(input('Enter b: '))
         def divide(a, b):
             return a / b
-        print(f'Division = {divide(a, b)}\n')
+        a=divide(a, b)
+        print(f'Division = {a}\n')
     elif type_of_calc == 'e':
-        a=float(input('Enter a: '))
         b=float(input('Enter b: '))
-        print(f'Exponentiation = {a ** b}\n')
+        a={a ** b}
+        print(f'Exponentiation = {a} \n')
     elif type_of_calc == 'p':
-        a=float(input('Enter a: '))
         b=float(input('Enter b: '))
-        print(f'Percentage (a/b*100)= {a / b * 100}\n')
+        a={a/b*100}
+        print(f'Percentage (a/b*100)= {a}\n')
     elif type_of_calc == 'q':
         print('Goodbye')
         break
     else:
         print('Invalid input')
-
-
-
