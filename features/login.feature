@@ -1,13 +1,12 @@
 Feature: LinkMyGear Application Login
 
   Background:
-    Given I navigate to "https://dev.linkmygear.com"
+#    Given I navigate to "https://dev.linkmygear.com"
+    Given I navigate to "dev" environment
     And I verify element "//h5" contains text "Account"
 
   Scenario: Successful user login with valid credentials
-    When I fill "pcs.automationclass@gmail.com" in element "//input[@name='username']"
-    And I fill "1234567" in element "//input[@name='password']"
-    And I click on "//button[text()=' Login ']"
+    When I login as "user"
     Then I verify element "//h3[contains(text(), 'My devices')]" exists
 
   Scenario: Unsuccessful user login with invalid credentials
@@ -29,3 +28,5 @@ Feature: LinkMyGear Application Login
       | username | pcs.automationclass@gmail.com |
       | password | 1234567                       |
     Then I verify element "//h3[contains(text(), 'My devices')]" exists
+    Then I wait for 3 seconds
+
