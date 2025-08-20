@@ -104,21 +104,24 @@ student = ["Elza", 21, "KM589746"]
 # print(quotient)
 # print(type(quotient))
 
+
 def summary(num1, num2):
-    print(f"Sum: {num1, num2}")
+    print(f"Sum:{num1 + num2}")
 
-    a = 15
-    b = 5
-    summary(a, b)
 
-    a = 40
-    b = 8
-    summary(a, b)
 
-    a = 20
-    b = 5
-    summary(a, b)
+a = 15
+b = 5
+summary(a, b)
 
-    a = 30
-    b = 6
-    summary(a, b)
+a = 40
+b = 8
+summary(a, b)
+
+a = 20
+b = 5
+summary(a, b)
+
+a = 30
+b = 6
+summary(a, b)
