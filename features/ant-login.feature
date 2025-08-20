@@ -9,6 +9,6 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h3[contains(text(), 'My devices')]" exists
 
     Scenario: Unsuccessful user login with invalid credentials
-    When ANT I login as "admin"
+    When ANT I login as "not_existing_user"
     Then I verify element "//h5" contains text "Account"
     And I verify element "//p[text()='Sorry, unrecognized username or password.']" exists
