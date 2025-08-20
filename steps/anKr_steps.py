@@ -1,8 +1,7 @@
 from behave import step
 
-
 @step('I login as "{user_type}"')
-def login_as_user(context, user_type):
+def login_as_anKr_user(context, user_type):
     """
     Args:
         user_type: Type of user to login as
@@ -15,7 +14,7 @@ def login_as_user(context, user_type):
     #     user_name = 'admin@gmail.com'
     #     password = 'admin1234'
     # else:
-    #     user_name = 'akr.autotest@gmail.com'
+    #     user_name = 'autotest@gmail.com'
     #     password = '13579'
 
 
