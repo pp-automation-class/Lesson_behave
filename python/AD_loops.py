@@ -45,8 +45,4 @@ for fruit in fruits:
     for f in fruit:
         print(f)
 
-
-
-
-
 print("End of program")
