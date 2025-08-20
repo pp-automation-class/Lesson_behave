@@ -46,9 +46,9 @@ student = ["Elza", 21, "KM589746"]
 # print(values)
 # print(type(values))
 
-values = list(set([1,2,3,4, "apple", "banana", "apple"]))
-print(values)
-print(type(values))
+# values = list(set([1,2,3,4, "apple", "banana", "apple"]))
+# print(values)
+# print(type(values))
 
 # a="6"
 # b="2"
@@ -104,5 +104,21 @@ print(type(values))
 # print(quotient)
 # print(type(quotient))
 
+def summary(num1, num2):
+    print(f"Sum: {num1, num2}")
 
+    a = 15
+    b = 5
+    summary(a, b)
 
+    a = 40
+    b = 8
+    summary(a, b)
+
+    a = 20
+    b = 5
+    summary(a, b)
+
+    a = 30
+    b = 6
+    summary(a, b)
