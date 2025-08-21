@@ -1,7 +1,7 @@
-from behave import *
+import behave
 
 
-@step('AM I login as "{user_type}"')
+@behave.step('AM I login as "{user_type}"')
 def am_login_as_user(context, user_type):
     """
     :param context:
@@ -11,11 +11,15 @@ def am_login_as_user(context, user_type):
              "password": "//input[@name='password']",
              "button": "//button[text()=' Login ']"}
     xpath_verify = "//h3[contains(text(), 'My device')]"
-    users = {"user": {"username": "7nxjno9lr@mozmail.com", "password": "r+WLLX9qwx^:>:3"},
-             "admin": {"username": "admin@cia.gov", "password": "password"},
-             "guest": {"username": "guest", "password": ""}}
+    users = {"user": {"username": "7nxjno9lr@mozmail.com",
+                      "password": "r+WLLX9qwx^:>:3"},
+             "admin": {"username": "admin@cia.gov",
+                       "password": "password"},
+             "guest": {"username": "guest",
+                       "password": ""}}
     assert user_type in users, f"Unknown user type '{user_type}'"
     context.page.fill_element(xpath["username"], users[user_type]["username"])
     context.page.fill_element(xpath["password"], users[user_type]["password"])
     context.page.click_element(xpath["button"])
-    assert context.page.element_exists(xpath_verify, timeout=3000), f"Login not successful for user type '{user_type}'"
+    assert context.page.element_exists(xpath_verify, timeout=3000), \
+        f"Login not successful for user type '{user_type}'"
