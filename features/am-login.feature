@@ -18,13 +18,13 @@ Feature: LinkMyGear Application Login
     Then I verify element "//h3[contains(text(), 'My device')]" exists
 
   Scenario: Login as user
-    When I login special as "user"
+    When AM I login as "user"
 
   Scenario: Login as admin
-    When I login special as "admin"
+    When AM I login as "admin"
 
   Scenario: Login as guest
-    When I login special as "guest"
+    When AM I login as "guest"
 
   Scenario: Login as unknown
-    When I login special as "Vasya"
+    When AM I login as "Vasya"
