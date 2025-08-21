@@ -17,7 +17,7 @@ else:
 print("End of program")
 print("\n")
 
-#Kilo/Pounds
+# Kilo/Pounds
 
 print("Helo! Kilograms to Pounds conversion program.")
 while True:
@@ -26,7 +26,7 @@ while True:
     if type_of_conversion == 'k':
         answer = float(input("Enter number of kilograms:"))
         print(f"{answer} kilograms is {answer * 2.20462} pounds")
-        #print("\n")
+        # print("\n")
 
     elif type_of_conversion == 'p':
         answer = float(input("Enter number of pounds:"))
@@ -37,5 +37,3 @@ while True:
         break
     else:
         print("Invalid input, please enter 'k' or 'p'")
-
-
