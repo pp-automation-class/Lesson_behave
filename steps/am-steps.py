@@ -1,7 +1,7 @@
-import behave
+from behave import step
 
 
-@behave.step('AM I login as "{user_type}"')
+@step('AM I login as "{user_type}"')
 def am_login_as_user(context, user_type):
     """
     :param context:
