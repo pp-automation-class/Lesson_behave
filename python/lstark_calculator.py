@@ -20,7 +20,6 @@ while True:
     elif operation == "/":
         if value_2 == 0:
             print("Error: Division by zero is not allowed.")
-            continue
         else:
             print(f"{value_1} / {value_2} = {value_1 / value_2}")
 
