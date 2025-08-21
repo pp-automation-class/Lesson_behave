@@ -1,7 +1,7 @@
 # HW - Calculator by Laura Stark
 
 print("Calculator")
-print ("Type 'q' for operation to quit")
+print("Type 'q' for operation to quit")
 
 while True:
     value_1 = (float(input("Enter value 1: ")))
@@ -22,5 +22,3 @@ while True:
             print("Error: Division by zero is not allowed.")
         else:
             print(f"{value_1} / {value_2} = {value_1 / value_2}")
-
-
