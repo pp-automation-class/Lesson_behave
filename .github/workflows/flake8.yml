@@ -30,11 +30,7 @@ jobs:
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
     
     - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
-    
-    - name: Install project
-      run: poetry install --no-interaction
     
     - name: Run flake8
       run: poetry run flake8 . --count --show-source --statistics --max-line-length=127 --max-complexity=10
