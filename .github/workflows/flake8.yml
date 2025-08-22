@@ -30,11 +30,17 @@ jobs:
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
     
     - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       run: poetry install --no-interaction --no-root
     
-    - name: Install project
-      run: poetry install --no-interaction
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v45
+      with:
+        files: |
+          **.py
     
     - name: Run flake8
-      run: poetry run flake8 . --count --show-source --statistics --max-line-length=127 --max-complexity=10
+      if: steps.changed-files.outputs.any_changed == 'true'
+      run: |
+        echo "Changed Python files: ${{ steps.changed-files.outputs.all_changed_files }}"
+        poetry run flake8 ${{ steps.changed-files.outputs.all_changed_files }} --count --show-source --statistics --max-line-length=127 --max-complexity=10
