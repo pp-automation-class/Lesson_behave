@@ -78,6 +78,7 @@ while True:
             return a * b
         a = multiply(a, b)
         print(f'Multiplication = {a}\n')
+
     elif type_of_calc == '/':
         b = float(input(ENTER_B))
 
@@ -85,14 +86,17 @@ while True:
             return a / b
         a = divide(a, b)
         print(f'Division = {a}\n')
+
     elif type_of_calc == 'e':
         b = float(input(ENTER_B))
         a = {a ** b}
         print(f'Exponentiation = {a} \n')
+
     elif type_of_calc == 'p':
         b = float(input(ENTER_B))
         a = {a/b*100}
         print(f'Percentage (a/b*100)= {a}\n')
+
     elif type_of_calc == 'q':
         print('Goodbye')
         break
