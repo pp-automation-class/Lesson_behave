@@ -13,6 +13,9 @@ behave = "^1.2.6"
 requests = "^2.32.4"
 
 
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.3.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
