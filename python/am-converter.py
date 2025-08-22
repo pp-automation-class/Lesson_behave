@@ -94,7 +94,7 @@ def select_unit(units_list):
             result = 0
         if result == -1:
             print("\nInvalid choice. "
-                  "Enter number of the unit or 0 for exit.\n")
+                  "Enter number of the unit or Q for exit.\n")
     return result
 
 
