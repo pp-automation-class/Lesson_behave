@@ -131,10 +131,11 @@ while True:
     else:
         print("Invalid input" + "\n")
 
-
-
 # # Identify usernames and how they are tired
-#
+
+print("Hello! Tiredness level reminder program")
+
+
 def remind_to_rest(name, tired_level):
     print(f"{name}, you said your tiredness level is {tired_level}/10.")
 
@@ -145,6 +146,7 @@ def remind_to_rest(name, tired_level):
     else:
         print("You're doing okay. Keep going, but don't forget to rest later!")
 
+
 remind_to_rest("Alice", 9)
 remind_to_rest("Ivan", 4)
 remind_to_rest("Maria", 7)
@@ -154,6 +156,7 @@ print("End of program" + "\n")
 
 # Calculator of username's tiredness
 print("Hello! Username's tiredness calculator")
+
 
 def remind_to_rest(name, tired_level):
     print(f"{name}, your tiredness level is {tired_level}/10.")
@@ -181,7 +184,7 @@ while True:
     if type_of_conversion == 'k':
         answer = float(input("Enter number of kilograms:"))
         print(f"{answer} kilograms is {answer * 2.20} pounds")
-        #print("\n")
+        print("\n")
     elif type_of_conversion == 'p':
         answer = float(input("Enter number of pounds:"))
         print(f"{answer} pounds is {answer / 2.20} kilograms")

@@ -6,6 +6,7 @@ Feature: LinkMyGear Application Login
     Given I navigate to "dev" environment
     And I verify element "//h5" contains text "Account"
 
+
   Scenario: Successful user login with valid credentials
     When I login as "anKr_user"
     Then I verify element "//h3[contains(text(), 'My device ')]" exists

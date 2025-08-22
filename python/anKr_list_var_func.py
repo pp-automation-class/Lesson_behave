@@ -247,6 +247,6 @@ def remind_to_rest():
     print("I am tired!")
     print("Have a rest!")
 
+
 remind_to_rest()
 print("End of program")
-

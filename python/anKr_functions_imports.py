@@ -32,16 +32,20 @@
 
 name = "Alice"
 
+
 def calculate_sum(a, b):
     print(name)
     return a + b
+
 
 def calculate_multiply(a, b):
     print(name)
     return a * b
 
+
 def print_result(result):
     print(f"Result: {result}")
+
 
 summ = calculate_sum(2, 7)
 print_result(summ)
