@@ -1,8 +1,8 @@
 Feature: LinkMyGear Application Login
 
   Background:
-    Given I navigate to "https://dev.linkmygear.com"
-    And I verify element "//h5" contains text "Account"
+    Given User navigates to "https://dev.linkmygear.com"
+    And User verify element "//h5" contains text "Account"
 
   Scenario: Successful user login with valid credentials
     When I fill "test12345.sky@gmail.com" in element "//input[@name='username']"
