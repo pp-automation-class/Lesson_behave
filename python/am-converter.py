@@ -44,6 +44,15 @@ core_dictionary = [
         ],
     },
     {
+        "unit": "Temperature",
+        "items": [
+            {"unit": "Celsius (°C)", "to": "quantity", "from": "universal"},
+            {"unit": "Fahrenheit (°F)", "to" : "(quantity - 32) * 5 / 9", "from": "(universal * 9 / 5) + 32"},
+            {"unit": "Kelvin (K)", "to": "quantity - 273.15", "from": "universal + 273.15"},
+            {"unit": "Rankine (°R)", "to": "(quantity - 491.67) * 5 / 9", "from": "(universal * 9 / 5) + 491.67"},
+        ],
+    },
+    {
         "unit": "Volume and Liquid Capacity",
         "items": [
             {"unit": "Millilitre (ml)", "value": 1000},
@@ -69,7 +78,7 @@ def output_units(units_list):
     for unit in units_list:
         print(f"{count}. {unit['unit']}")
         count += 1
-    print("0. Exit")
+    print("Q. Exit")
 
 
 def select_unit(units_list):
@@ -81,6 +90,8 @@ def select_unit(units_list):
             result = int(choiced_item)
             if result < 0 or result > len(units_list):
                 result = -1
+        elif choiced_item.upper() == "Q":
+            result = 0
         if result == -1:
             print("\nInvalid choice. "
                   "Enter number of the unit or 0 for exit.\n")
@@ -89,7 +100,9 @@ def select_unit(units_list):
 
 def pretty_float(number):
     result = f"{number:,.6f}"
-    if number < 0.001 or number > 999999999999:
+    if number == 0:
+        return "0"
+    if abs(number) < 0.001 or abs(number) > 999999999999:
         result = f"{number:,.6e}"
     elif number > 99999:
         result = f"{number:,.0f}"
@@ -108,27 +121,45 @@ def pretty_float(number):
     return result
 
 
-def convert_units(item_index, units_list):
-    quantity = -1
-    while quantity:
+def convert_units_with_value(item_index: int, units_list: list, quantity: float) -> None:
+    coefficient = 1 / units_list[item_index]["value"]
+    for unit in units_list:
+        result = pretty_float(unit["value"] * coefficient * quantity)
+        print(f"{unit['unit']}: {result}")
+    print("\n")
+
+
+def convert_units_with_to_and_from(item_index: int, units_list: list, quantity : float) -> None:
+    """
+    :param item_index: int
+    :param units_list: list
+    :param quantity: float
+    :return: None
+    """
+    universal: float = eval(units_list[item_index]["to"], {"quantity": quantity})
+    for unit in units_list:
+        result = pretty_float(eval(unit["from"], {"universal": universal}))
+        print(f"{unit['unit']}: {result}")
+    print("\n")
+
+
+def convert_units(item_index: int, units_list: list) -> None:
+    while True:
         print(f"Enter the quantity of {units_list[item_index]['unit']}")
-        print("0. choice the unit")
+        print("Q. choice the unit")
         quantity = input("=>")
+        if quantity.upper() == "Q":
+            return
         try:
             quantity = float(quantity)
-            if not quantity:
-                break
-            if quantity < 0:
-                continue
-            #
-            coefficient = 1 / units_list[item_index]["value"]
-            for unit in units_list:
-                result = pretty_float(unit["value"] * coefficient * quantity)
-                print(f"{unit['unit']}: {result}")
-            print("\n")
-            #
+            if "value" in units_list[item_index]:
+                if quantity <= 0:
+                    continue
+                convert_units_with_value(item_index, units_list, quantity)
+            elif "to" in units_list[item_index]:
+                convert_units_with_to_and_from(item_index, units_list, quantity)
         except ValueError:
-            quantity = -1
+            pass
 
 
 # main code
