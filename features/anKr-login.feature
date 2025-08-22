@@ -8,7 +8,9 @@ Feature: LinkMyGear Application Login
 
 
   Scenario: Successful user login with valid credentials
-    When I login as "anKr_user"
+    When I fill "autotest@gmail.com" in element "//input[@name='username']"
+    When I fill "12345" in element "//input[@name='password']"
+    And I click on "//button[text()=' Login ']"
     Then I verify element "//h3[contains(text(), 'My device ')]" exists
 
   Scenario: Unsuccessful user login with invalid credentials
