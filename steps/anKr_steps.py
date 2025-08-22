@@ -1,7 +1,10 @@
 from behave import step
 
-@step('anKr login as "{user_type}"')
-def anKr_login_as_user(context, user_type):
+from steps.steps import fill_text_in_element, click_on_element
+
+
+@step('ankr login as "{user_type}"')
+def ankr_login_as_user(context, user_type):
     """
     Args:
         user_type: Type of user to login as
@@ -25,12 +28,12 @@ def anKr_login_as_user(context, user_type):
 
     # fill username
     user_name_xpath = "//input[@name='username']"
-    #fill_text_in_element(context, user_name, user_name_xpath)
+    # fill_text_in_element(context, user_name, user_name_xpath)
     fill_text_in_element(context, user_credentials[user_type][0], user_name_xpath)
     # fill password
     password_xpath = "//input[@name='password']"
-    #fill_text_in_element(context, password, password_xpath)
+    # fill_text_in_element(context, password, password_xpath)
     fill_text_in_element(context, user_credentials[user_type][1], password_xpath)
-    # Click button
+    # Click the button
     login_button_xpath = "//button[text()=' Login ']"
-    click_on_element(context, login_button_xpath
+    click_on_element(context, login_button_xpath)
