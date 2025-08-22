@@ -46,10 +46,10 @@ core_dictionary = [
     {
         "unit": "Temperature",
         "items": [
-            {"unit": "Celsius (°C)", "to": "quantity", "from": "universal"},
-            {"unit": "Fahrenheit (°F)", "to" : "(quantity - 32) * 5 / 9", "from": "(universal * 9 / 5) + 32"},
-            {"unit": "Kelvin (K)", "to": "quantity - 273.15", "from": "universal + 273.15"},
-            {"unit": "Rankine (°R)", "to": "(quantity - 491.67) * 5 / 9", "from": "(universal * 9 / 5) + 491.67"},
+            {"unit": "Celsius (°C)", "from": "quantity", "to": "universal"},
+            {"unit": "Fahrenheit (°F)", "from" : "(quantity - 32) * 5 / 9", "to": "(universal * 9 / 5) + 32"},
+            {"unit": "Kelvin (K)", "from": "quantity - 273.15", "to": "universal + 273.15"},
+            {"unit": "Rankine (°R)", "from": "(quantity - 491.67) * 5 / 9", "to": "(universal * 9 / 5) + 491.67"},
         ],
     },
     {
@@ -136,9 +136,9 @@ def convert_units_with_to_and_from(item_index: int, units_list: list, quantity :
     :param quantity: float
     :return: None
     """
-    universal: float = eval(units_list[item_index]["to"], {"quantity": quantity})
+    universal: float = eval(units_list[item_index]["from"], {"quantity": quantity})
     for unit in units_list:
-        result = pretty_float(eval(unit["from"], {"universal": universal}))
+        result = pretty_float(eval(unit["to"], {"universal": universal}))
         print(f"{unit['unit']}: {result}")
     print("\n")
 
