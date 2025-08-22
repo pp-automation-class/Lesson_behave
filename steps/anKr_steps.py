@@ -1,6 +1,6 @@
 from behave import step
 
-@step('I login as "{user_type}"')
+@step('anKr login as "{user_type}"')
 def login_as_anKr_user(context, user_type):
     """
     Args:
@@ -20,7 +20,7 @@ def login_as_anKr_user(context, user_type):
 
     user_credentials = {
         "user": ("akr.autotest@gmail.com", "12345"),
-        "admin": ("akr.autotest@gmail.com", "xxxxxx")
+        "admin": ("akr.autotest@gmail.com", "13579")
     }
 
     # fill username
@@ -33,4 +33,4 @@ def login_as_anKr_user(context, user_type):
     fill_text_in_element(context, user_credentials[user_type][1], password_xpath)
     # Click button
     login_button_xpath = "//button[text()=' Login ']"
-    click_on_element(context, login_button_xpath)
+    click_on_element(context, login_button_xpath
