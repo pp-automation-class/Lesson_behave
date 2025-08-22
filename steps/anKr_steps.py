@@ -1,9 +1,7 @@
 from behave import step
 
-from steps.steps import fill_text_in_element, click_on_element
 
-
-@step('ankr login as "{user_type}"')
+@step('Ankr login as "{user_type}"')
 def ankr_login_as_user(context, user_type):
     """
     Args:
@@ -34,6 +32,10 @@ def ankr_login_as_user(context, user_type):
     password_xpath = "//input[@name='password']"
     # fill_text_in_element(context, password, password_xpath)
     fill_text_in_element(context, user_credentials[user_type][1], password_xpath)
-    # Click the button
+    # Click login button
+
+    def click_on_element(context, xpath):
+        context.page.click_element(xpath)
+
     login_button_xpath = "//button[text()=' Login ']"
     click_on_element(context, login_button_xpath)
