@@ -20,7 +20,7 @@ while True:
     else:
         print(INVALID_INPUT)
 
-print('Hello! Convert Celsius to Fahrenheit or Fahrenheit to Celsius')
+print('You can convert Celsius to Fahrenheit or Fahrenheit to Celsius')
 while True:
     type_of_calc = input('Enter "c" for Celsius to Fahrenheit \n'
                          'enter "f" for Fahrenheit to Celsius \n'

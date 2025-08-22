@@ -1,5 +1,5 @@
 ENTER_B = 'Enter next number: '
-ENTER_A = 'Enter a number:'
+ENTER_A = 'Enter a number: '
 
 
 AD_my_list = [1, 2, 3, 5, 7, 9, 10, 12, 5, 4, 12, 0, 36, 99]
