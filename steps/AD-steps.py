@@ -59,10 +59,3 @@ def ad_verify_element_exists(context, xpath):
         xpath: XPath selector for the element
     """
     context.page.verify_element_exists(xpath)
-
-
-@step('User navigate to "{url}"')
-def ad_navigate_to_url(context, url):
-    if url == 'https://dev.linkmygear.com':
-        url = 'https://test:FjeKB9ySMzwvDUs2XACpfu@dev.linkmygear.com'
-    context.page.navigate(url)
