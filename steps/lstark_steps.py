@@ -1,6 +1,7 @@
 
 from behave import step
 
+
 @step('lstark I login as "{user_type}"')
 def lstark_login_as_user(context, user_type):
     """
@@ -23,15 +24,15 @@ def lstark_login_as_user(context, user_type):
         "admin": ("pcs.automationclass@gmail.com", "1234567")
     }
 
-
     # fill username
+
     def fill_text_in_element(context, text, xpath):
         if text != 'Skip':
             context.page.fill_element(xpath, text)
 
     user_name_xpath = "//input[@name='username']"
     # fill_text_in_element(context, user_name, user_name_xpath)
-    fill_text_in_element(context,user_credentials[user_type][0], user_name_xpath)
+    fill_text_in_element(context, user_credentials[user_type][0], user_name_xpath)
 
     # fill password
     password_xpath = "//input[@name='password']"
