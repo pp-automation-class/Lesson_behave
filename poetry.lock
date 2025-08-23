@@ -5,7 +5,7 @@ name = "behave"
 version = "1.3.1"
 description = "behave is behaviour-driven development, Python style"
 optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 files = [
     {file = "behave-1.3.1-py2.py3-none-any.whl", hash = "sha256:71b2dc00664de83c3aad61c91e5b3051b7b860aa2053e24db4742edecb800d21"},
     {file = "behave-1.3.1.tar.gz", hash = "sha256:2a1f3a2490242132c4daf0732d9b65c99be6fef1f787f97fd028ea5a402025ff"},
@@ -257,17 +257,6 @@ files = [
 
 [package.extras]
 all = ["flake8 (>=7.1.1)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.6.2)"]
-
-[[package]]
-name = "mccabe"
-version = "0.7.0"
-description = "McCabe checker, plugin for flake8"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"},
-    {file = "mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"},
-]
 
 [[package]]
 name = "parse"
