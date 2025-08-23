@@ -31,13 +31,13 @@
 # False or True  => True
 # False or False  => False
 
-##14
+# 14
 #    false     or       true      and     true
 #       false        or          true    => true
 # if answer <=5 or  answer >= 10 and answer != 15:
 #     print(" 5")
 
-##15
+# 15
 #    false     or       true      and     false
 #       false        or          false   => false
 # if answer <=5 or  answer >= 10 and answer != 15:
