@@ -34,6 +34,7 @@ class Animal:
     def run():
         print("running")
 
+
 cat = Animal()
 dog = Animal()
 
@@ -42,5 +43,3 @@ cat.legs = 4
 dog.legs = 5
 print(cat)
 print(dog)
-
-

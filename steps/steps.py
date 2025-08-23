@@ -37,7 +37,7 @@ def click_on_element(context, xpath):
 def fill_text_in_element(context, text, xpath):
     """
     Fill text in an element identified by XPath.
-    
+
     Args:
         context: Behave context
         text: Text to fill in the element
@@ -51,7 +51,7 @@ def fill_text_in_element(context, text, xpath):
 def verify_element_exists(context, xpath):
     """
     Verify that an element identified by XPath exists.
-    
+
     Args:
         context: Behave context
         xpath: XPath selector for the element
@@ -63,7 +63,7 @@ def verify_element_exists(context, xpath):
 def verify_element_contains_text(context, xpath, expected_text):
     """
     Verify that an element identified by XPath contains the expected text.
-    
+
     Args:
         context: Behave context
         xpath: XPath selector for the element
@@ -71,6 +71,7 @@ def verify_element_contains_text(context, xpath, expected_text):
     """
     actual_text = context.page.get_element_text(xpath)
     assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
+
 
 @step('I verify element page title contains text "{expected_text}"')
 def verify_element_contains_text_with_pom(context, expected_text):
@@ -83,7 +84,7 @@ def verify_element_contains_text_with_pom(context, expected_text):
 def wait_for_element(context, xpath):
     """
     Wait for an element identified by XPath to be visible.
-    
+
     Args:
         context: Behave context
         xpath: XPath selector for the element
@@ -154,7 +155,6 @@ def login_as_user(context, user_type):
     #     user_name = 'pcs.automationclass@gmail.com'
     #     password = 'xxxxxx'
 
-
     user_credentials = {
         "user": ("pcs.automationclass@gmail.com", "1234567"),
         "admin": ("pcs.automationclass@gmail.com", "xxxxxx")
@@ -174,5 +174,3 @@ def login_as_user(context, user_type):
     # login_button_xpath = "//button[text()=' Login ']"
     login_button_xpath = LoginPage().login_button
     click_on_element(context, login_button_xpath)
-
-
