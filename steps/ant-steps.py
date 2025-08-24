@@ -1,5 +1,5 @@
 from behave import step
-from steps import fill_text_in_element, click_on_element, wait_for_element,verify_element_exists
+from steps import fill_text_in_element, click_on_element, wait_for_element, verify_element_exists
 
 
 class AntLoginPage:
@@ -9,6 +9,7 @@ class AntLoginPage:
         self.password = "//input[@name='password']"
         self.login_button = "//button[text()=' Login ']"
 
+
 class AntDevicePage:
 
     def __init__(self):
@@ -17,8 +18,7 @@ class AntDevicePage:
         self.device_type = "//label[text()='Device type']"
         self.device_airguard = "//li[.//span[text()='Airguard other']]"
         self.device_name_field = "//input[@class='el-input__inner']"
-        self.add_new_device_button =  "//div[@class='form-submit']/button[.//span[text()='Add new device']]"
-
+        self.add_new_device_button = "//div[@class='form-submit']/button[.//span[text()='Add new device']]"
 
 
 @step('ANT I login as "{user_type}"')
