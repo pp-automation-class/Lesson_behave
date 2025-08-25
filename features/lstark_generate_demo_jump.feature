@@ -20,3 +20,5 @@ Feature: LinkMyGear Application Generate Demo Jump
     # or use XPath "//button[normalize-space()='OK']"
     And I click on "//button[normalize-space()='Generate demo jump']"
     Then I verify element "//p[text()='Demo jump has been generated']" exists
+
+

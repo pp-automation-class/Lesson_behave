@@ -1,24 +1,26 @@
+INVALID_INPUT = 'Invalid input'
+
+# converter miles to km or km to miles
 print('Hello! Convert miles to km or km to miles')
 while True:
-    type_of_calc=input('Enter "m" for miles to km \n'
-                       'enter "k" for km to miles \n'
-                       'enter "q" to quit: ')
+    type_of_calc = input('Enter "m" for miles to km \n'
+                         'enter "k" for km to miles \n'
+                         'enter "q" to quit: ')
 
-    if type_of_calc=='m':
-        answer=float(input("Enter a number of miles: "))
+    if type_of_calc == 'm':
+        answer = float(input("Enter a number of miles: "))
         print(f'{answer} miles is {answer*1.609} km')
-    elif type_of_calc=='k':
-        answer=float(input("Enter a number of km: "))
+    elif type_of_calc == 'k':
+        answer = float(input("Enter a number of km: "))
         print(f'{answer} km is {answer*0.621371} miles')
-    elif type_of_calc=='q':
+    elif type_of_calc == 'q':
         print('Goodbye\n')
         break
     else:
-        print('Invalid input')
+        print(INVALID_INPUT)
 
-
-
-print('Hello! Convert Celsius to Fahrenheit or Fahrenheit to Celsius')
+# converter Celsius to Fahrenheit or Fahrenheit to Celsius
+print('You can convert Celsius to Fahrenheit or Fahrenheit to Celsius')
 while True:
     type_of_calc = input('Enter "c" for Celsius to Fahrenheit \n'
                          'enter "f" for Fahrenheit to Celsius \n'
@@ -33,8 +35,36 @@ while True:
         print('Goodbye\n')
         break
     else:
-        print('Invalid input')
+        print(INVALID_INPUT)
 
+# calculator
+
+ENTER_A = 'Enter a: '
+ENTER_B = 'Enter b: '
+
+
+def sum(a, b):
+    return a + b
+
+
+def minus(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    return a / b
+
+
+def exp(a, b):
+    return a ** b
+
+
+def percent(a, b):
+    return a / b * 100
 
 
 print('Hello! Welcome to calculator\n'
@@ -46,50 +76,47 @@ print('Hello! Welcome to calculator\n'
       'enter "p" for Percentage (a/b*100)\n'
       'enter "ac" for All clear \n'
       'enter "q" to quit: ')
-a = float(input('Enter a: '))
+a = float(input(ENTER_A))
 
 while True:
     type_of_calc = input('Enter function \n')
     if type_of_calc == 'ac':
         print('All clear')
-        a = float(input('Enter a: '))
+        a = float(input(ENTER_A))
         type_of_calc = input('Enter function \n')
 
     if type_of_calc == '+':
-        b = float(input('Enter b: '))
-        def sum(a, b):
-            return a + b
-        a=sum(a, b)
+        b = float(input(ENTER_B))
+        a = sum(a, b)
         print(f'Summary = {a}\n')
 
     elif type_of_calc == '-':
-        b = float(input('Enter b: '))
-        def minus(a, b):
-            return a - b
-        a=minus(a, b)
+        b = float(input(ENTER_B))
+        a = minus(a, b)
         print(f'Subtraction = {a}\n')
+
     elif type_of_calc == '*':
-        b = float(input('Enter b: '))
-        def multiply(a, b):
-            return a * b
-        a=multiply(a,b)
+        b = float(input(ENTER_B))
+        a = multiply(a, b)
         print(f'Multiplication = {a}\n')
+
     elif type_of_calc == '/':
-        b = float(input('Enter b: '))
-        def divide(a, b):
-            return a / b
-        a=divide(a, b)
+        b = float(input(ENTER_B))
+        a = divide(a, b)
         print(f'Division = {a}\n')
+
     elif type_of_calc == 'e':
-        b=float(input('Enter b: '))
-        a={a ** b}
+        b = float(input(ENTER_B))
+        a = exp(a, b)
         print(f'Exponentiation = {a} \n')
+
     elif type_of_calc == 'p':
-        b=float(input('Enter b: '))
-        a={a/b*100}
+        b = float(input(ENTER_B))
+        a = percent(a, b)
         print(f'Percentage (a/b*100)= {a}\n')
+
     elif type_of_calc == 'q':
         print('Goodbye')
         break
     else:
-        print('Invalid input')
+        print(INVALID_INPUT)
