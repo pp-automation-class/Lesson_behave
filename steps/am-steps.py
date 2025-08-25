@@ -1,7 +1,7 @@
-import behave
+from behave import step
 
 
-@behave.step('AM I login as "{user_type}"')
+@step('AM I login as "{user_type}"')
 def am_login_as_user(context, user_type):
     """
     :param context:
@@ -21,5 +21,4 @@ def am_login_as_user(context, user_type):
     context.page.fill_element(xpath["username"], users[user_type]["username"])
     context.page.fill_element(xpath["password"], users[user_type]["password"])
     context.page.click_element(xpath["button"])
-    assert context.page.element_exists(xpath_verify, timeout=3000), \
-        f"Login not successful for user type '{user_type}'"
+    assert context.page.element_exists(xpath_verify, timeout=3000), f"Login not successful for user type '{user_type}'"

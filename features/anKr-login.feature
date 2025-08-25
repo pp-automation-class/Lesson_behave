@@ -2,12 +2,14 @@
 Feature: LinkMyGear Application Login
 
   Background:
+#   Given I navigate to "https://dev.linkmygear.com"
     Given I navigate to "dev" environment
     And I verify element "//h5" contains text "Account"
 
+
   Scenario: Successful user login with valid credentials
-    When I fill "akr.autotest@gmail.com" in element "//input[@name='username']"
-    And I fill "12345" in element "//input[@name='password']"
+    When I fill "autotest@gmail.com" in element "//input[@name='username']"
+    When I fill "12345" in element "//input[@name='password']"
     And I click on "//button[text()=' Login ']"
     Then I verify element "//h3[contains(text(), 'My device ')]" exists
 

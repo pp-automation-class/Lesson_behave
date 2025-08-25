@@ -3,6 +3,7 @@ Step definitions for web interactions using the Lingh framework.
 """
 
 from behave import step
+from pages.login import LoginPage
 
 
 @step('I navigate to "{url}"')
@@ -36,7 +37,7 @@ def click_on_element(context, xpath):
 def fill_text_in_element(context, text, xpath):
     """
     Fill text in an element identified by XPath.
-    
+
     Args:
         context: Behave context
         text: Text to fill in the element
@@ -50,7 +51,7 @@ def fill_text_in_element(context, text, xpath):
 def verify_element_exists(context, xpath):
     """
     Verify that an element identified by XPath exists.
-    
+
     Args:
         context: Behave context
         xpath: XPath selector for the element
@@ -62,7 +63,7 @@ def verify_element_exists(context, xpath):
 def verify_element_contains_text(context, xpath, expected_text):
     """
     Verify that an element identified by XPath contains the expected text.
-    
+
     Args:
         context: Behave context
         xpath: XPath selector for the element
@@ -72,11 +73,18 @@ def verify_element_contains_text(context, xpath, expected_text):
     assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
 
 
+@step('I verify element page title contains text "{expected_text}"')
+def verify_element_contains_text_with_pom(context, expected_text):
+    login_page = LoginPage()
+    actual_text = context.page.get_element_text(login_page.header)
+    assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
+
+
 @step('I wait for element "{xpath}" to be visible')
 def wait_for_element(context, xpath):
     """
     Wait for an element identified by XPath to be visible.
-    
+
     Args:
         context: Behave context
         xpath: XPath selector for the element
@@ -147,20 +155,22 @@ def login_as_user(context, user_type):
     #     user_name = 'pcs.automationclass@gmail.com'
     #     password = 'xxxxxx'
 
-
     user_credentials = {
         "user": ("pcs.automationclass@gmail.com", "1234567"),
         "admin": ("pcs.automationclass@gmail.com", "xxxxxx")
     }
 
     # fill username
-    user_name_xpath = "//input[@name='username']"
+    # user_name_xpath = "//input[@name='username']"
+    user_name_xpath = LoginPage().username
     # fill_text_in_element(context, user_name, user_name_xpath)
     fill_text_in_element(context, user_credentials[user_type][0], user_name_xpath)
     # fill password
-    password_xpath = "//input[@name='password']"
+    # password_xpath = "//input[@name='password']"
+    password_xpath = LoginPage().password
     # fill_text_in_element(context, password, password_xpath)
     fill_text_in_element(context, user_credentials[user_type][1], password_xpath)
     # Click button
-    login_button_xpath = "//button[text()=' Login ']"
+    # login_button_xpath = "//button[text()=' Login ']"
+    login_button_xpath = LoginPage().login_button
     click_on_element(context, login_button_xpath)
