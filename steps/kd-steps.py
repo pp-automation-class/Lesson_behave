@@ -1,5 +1,6 @@
 from behave import step
 
+
 @step('kd I click on "{xpath}"')
 def kd_on_click(context, xpath):
     """
