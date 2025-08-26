@@ -4,19 +4,19 @@ Feature: LinkMyGear Application Login
     Given I navigate to "https://dev.linkmygear.com"
     And I verify element "//h5" contains text "Account"
 
-  Scenario Outline: User registration
+  Scenario Outline: User registration with valid and existing email
     When I click on "//a[@href='#/register']"
     Then I wait for element "//h5[text()='Create an Account']" to be visible
-    When I fill "<email>" in element "//input[@class='el-input__inner']"
+    When am: I fill "<email>" in element "//input[@class='el-input__inner']"
     And  I click on "//span[@class='el-checkbox__inner']"
     And  I click on "//button[text()=' Register ']"
     When I verify element "<verification_element>" exists
     Then I wait for 2 seconds
 
     Examples:
-      | email                      | verification_element                             |
-      | dx7e7nxjno9lr@mozmail.com  | //h3[contains(text(), 'My device')]              |
-      | 7nxjno9lr@mozmail.com      | //p[contains(text(), 'The user already exists')] |
+      | email                 | verification_element                             |
+      | RandomEmail           | //h3[contains(text(), 'My device')]              |
+      | 7nxjno9lr@mozmail.com | //p[contains(text(), 'The user already exists')] |
 
   Scenario: User registration with empty email
     When I click on "//a[@href='#/register']"
@@ -26,7 +26,7 @@ Feature: LinkMyGear Application Login
     When I verify element "//div[text()='Please enter you email address']" exists
     Then I wait for 2 seconds
 
-   Scenario: User registration with invalid email
+  Scenario: User registration with invalid email
     When I click on "//a[@href='#/register']"
     Then I wait for element "//h5[text()='Create an Account']" to be visible
     When I fill "xxxxx" in element "//input[@class='el-input__inner']"
