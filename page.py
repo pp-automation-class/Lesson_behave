@@ -26,6 +26,7 @@ class Page:
         Args:
             xpath (str): XPath selector for the element
         """
+        print(f"click on xpath={xpath}")
         self.page.click(f"xpath={xpath}")
     
     def fill_element(self, xpath, text):
@@ -36,6 +37,7 @@ class Page:
             xpath (str): XPath selector for the element
             text (str): Text to fill in the element
         """
+        print(f"fill '{text}' in xpath={xpath}")
         self.page.fill(f"xpath={xpath}", text)
     
     def element_exists(self, xpath, timeout=5000):
