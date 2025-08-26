@@ -18,6 +18,8 @@ def ankr_login_as_user(context, user_type):
         user_name = 'autotest@gmail.com'
         password = '13579'
 
+
+
     # fill username
     def fill_text_in_element(context, text, xpath):
         if text != 'Skip':
