@@ -45,6 +45,7 @@ def fill_text_in_element(context, text, xpath):
     """
     if text != 'Skip':
         context.page.fill_element(xpath, text)
+        # context.page.fill(xpath, text)
 
 
 @step('I verify element "{xpath}" exists')
