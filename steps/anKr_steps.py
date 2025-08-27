@@ -15,8 +15,8 @@ def ankr_login_as_user(context, user_type):
     """
 
     user_credentials = {
-        "user": ("akr.autotest@gmail.com@gmail.com", "12345"),
-        "admin": ("akr.autotest@gmail.com@gmail.com", "13579")
+        "user": {"username":"akr.autotest@gmail.com", "password":"12345"},
+        "admin": {"username":"akr.autotest@gmail.com", "password":"13579"}
     }
 
     # fill username
@@ -33,7 +33,7 @@ def ankr_login_as_user(context, user_type):
     click_on_element(context, login_button_xpath)
 
 
-@step('anKr I verify element title contains text "{expected_text}"')
+@step('anKr I verify element page title contains text "Account"')
 def ankr_verify_element_contains_text_with_pom(context, expected_text):
     login_page = LoginPage()
     actual_text = context.page.get_element_text(login_page.header)

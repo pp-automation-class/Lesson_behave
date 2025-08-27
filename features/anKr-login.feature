@@ -11,7 +11,7 @@ Feature: LinkMyGear Application Login
   Scenario: Successful user login with valid credentials
     When I login as "user"
     Then I verify element "//h3[contains(text(), 'My device')]" exists
-#
+
 #  Scenario: Unsuccessful user login with invalid credentials
 #    When I fill "autotest@gmail.com" in element "//input[@name='username']"
 #    When I fill "13579" in element "//input[@name='password']"
