@@ -20,9 +20,11 @@ def fill_element(page, locator, value):
             value = random_email()
         page.locator(locator).fill(value)
 
+
 def click_element(page, locator):
     if locator != "Skip":
         page.locator(locator).click()
+
 
 registration_data = [
     [
