@@ -6,7 +6,7 @@ from behave import step
 from pages.login import LoginPage
 
 
-@step('Ankr login as "{user_type}"')
+@step('anKr I login as "{user_type}"')
 def ankr_login_as_user(context, user_type):
     """
     Args:
@@ -33,9 +33,8 @@ def ankr_login_as_user(context, user_type):
     click_on_element(context, login_button_xpath)
 
 
-@step('AnKr verify element title contains text "{expected_text}"')
-def verify_element_contains_text_with_pom(context, expected_text):
+@step('anKr I verify element title contains text "{expected_text}"')
+def ankr_verify_element_contains_text_with_pom(context, expected_text):
     login_page = LoginPage()
-
     actual_text = context.page.get_element_text(login_page.header)
     assert expected_text in actual_text, f"Expected text '{expected_text}' not found in '{actual_text}'"
