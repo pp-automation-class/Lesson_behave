@@ -18,6 +18,7 @@ class Dog:
     def barking(self):
         print(f"{self.name} is now barking.")
 
+
 my_dog = Dog("Lord", 6)
 your_dog = Dog("Lucy", 4)
 
