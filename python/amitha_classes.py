@@ -1,8 +1,5 @@
-from python.Amitha_PythonPractice import firstName
-
-
 class Amitha_cars:
-    def __init__(self, model, make, year, condition = bool):
+    def __init__(self, model, make, year, condition: bool = True):
         self.model = model
         self.make = make
         self.year = year
