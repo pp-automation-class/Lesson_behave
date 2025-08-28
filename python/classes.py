@@ -37,13 +37,13 @@ class Animal:
         print("running")
 
 
-
 class Cat(Animal):
     def meow(self):
         print("meow")
 
     def run(self):
         print("running and climbing tree")
+
 
 class Dog(Animal):
     def bark(self):
@@ -59,4 +59,3 @@ print("++++++++++++")
 dog = Dog(4)
 dog.bark()
 dog.run()
-
