@@ -25,21 +25,38 @@
 # cat_breath()
 
 class Animal:
-    legs = None
-    name = None
+    def __init__(self, legs_amount: int, tail: bool = True):
+        self.legs = legs_amount
+        self.tail = tail
+        self.name = "Animal"
 
-    def breath():
-        print("breathing")
+    def breath(self):
+        print(f"breathing and has {self.legs} legs")
 
-    def run():
+    def run(self):
         print("running")
 
 
-cat = Animal()
-dog = Animal()
+
+class Cat(Animal):
+    def meow(self):
+        print("meow")
+
+    def run(self):
+        print("running and climbing tree")
+
+class Dog(Animal):
+    def bark(self):
+        print("bark")
 
 
-cat.legs = 4
-dog.legs = 5
-print(cat)
-print(dog)
+cat = Cat(4, False)
+cat.meow()
+cat.run()
+
+print("++++++++++++")
+
+dog = Dog(4)
+dog.bark()
+dog.run()
+
