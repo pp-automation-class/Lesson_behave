@@ -34,9 +34,15 @@ class Pet:
         except ValueError:
             return None
 
-    def print_age(self):
+    def print_age(self, form: int = 1):
         if self.birthday:
-            print(f"Age of {self.name}: {self.age} year(s)")
+            age = self.age
+            if isinstance(age, int):
+                s = 's' if age > 1 else ''
+                if form == 1:
+                    print(f"{self.name} is {age} year{s} old")
+                else:
+                    print(f"Age of {self.name}: {age} year{s}")
 
     def sound(self):
         if self.sounds:
@@ -44,15 +50,6 @@ class Pet:
 
     def move(self):
         print(f"{self.name} {self.moves}")
-
-
-some = Pet("Sam", "12/4/2023")
-print(some)
-some.print_age()
-some.sound()
-some.move()
-
-print("")
 
 
 class Cat(Pet):
@@ -69,18 +66,6 @@ class Cat(Pet):
         print(f"{self.name} meows")
 
 
-my_cat = Cat("Lucy", "4/22/2020")
-print(my_cat)
-my_cat.print_age()
-my_cat.sound()
-my_cat.purr()
-my_cat.scratch()
-my_cat.meow()
-my_cat.move()
-
-print("")
-
-
 class Dog(Pet):
     sounds = "barks, woofs, arfs, ruffs, yips, and growls"
     moves = "running, jumping"
@@ -88,15 +73,11 @@ class Dog(Pet):
     def bark(self):
         print(f"{self.name} barks")
 
+    def fetch(self, item: str):
+        print(f"{self.name} fetches the {item}")
 
-my_dog = Dog("Beavis", "8/11/2017", "Chihuahua")
-print(my_dog)
-my_dog.print_age()
-my_dog.sound()
-my_dog.move()
-my_dog.bark()
-
-print("")
+    def guard(self):
+        print(f"{self.name} is guarding")
 
 
 class Parrot(Pet):
@@ -110,6 +91,38 @@ class Parrot(Pet):
 
     def talk(self):
         print(f"{self.name} talks")
+
+
+some = Pet("Sam", "12/4/2023")
+some.moves = "crawls"
+print(some)
+some.print_age(form=2)
+some.sound()
+some.move()
+
+print()
+
+my_cat = Cat("Lucy", "4/22/2020")
+print(my_cat)
+my_cat.print_age(form=2)
+my_cat.sound()
+my_cat.purr()
+my_cat.scratch()
+my_cat.meow()
+my_cat.move()
+
+print()
+
+my_dog = Dog("Beavis", "8/11/2017", "Chihuahua")
+print(my_dog)
+my_dog.print_age()
+my_dog.sound()
+my_dog.move()
+my_dog.bark()
+my_dog.fetch("toy")
+my_dog.guard()
+
+print()
 
 
 my_bird = Parrot("Pikachu", "7/4/2023")
