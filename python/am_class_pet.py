@@ -33,10 +33,10 @@ class Pet:
 
     def sound(self):
         if self.sounds:
-            print(f"{self.name} { self.sounds }")
+            print(f"{self.name} {self.sounds}")
 
     def move(self):
-        print(f"{self.name} { self.moves }")
+        print(f"{self.name} {self.moves}")
 
 
 some = Pet("Sam", "12/4/2023")
