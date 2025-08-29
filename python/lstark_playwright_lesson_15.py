@@ -10,7 +10,6 @@ for browser_type in browser:
             browser = p.chromium.launch(headless=False)
         else:
             browser = p.firefox.launch(headless=False)
-            context_dev = browser.new_context()
 
         page = browser.new_page()
         page.goto("https://test:FjeKB9ySMzwvDUs2XACpfu@dev.linkmygear.com")
@@ -19,7 +18,7 @@ for browser_type in browser:
         username = page.locator("//input[@name='username']")
         username.fill("email")
         # username.type("email", delay=500)
-        # username.click(
+        # username.click()
         password = page.locator("//input[@name='password']")
         password.fill("1234")
         page.keyboard.press("Enter")
