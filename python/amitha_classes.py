@@ -5,7 +5,6 @@ class Amitha_cars:
         self.year = year
         self.condition = condition
 
-
     def __str__(self):
         return f'{self.model} {self.make} {self.year} {self.condition}'
 
@@ -22,10 +21,10 @@ class Amitha_person:
         self.marital_status = marital_status if marital_status else "single"
         self.address = address
 
-
     def __str__(self):
         return (f'{self.firstname} {self.lastname}, Age: {self.age}, '
                 f'Marital Status: {self.marital_status}, Address: {self.address}')
+
 
 # Creating an object
 p1 = Amitha_person('Amitha', 'Ganesh', 30,
