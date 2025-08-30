@@ -1,6 +1,26 @@
 # OOP
-# Animal =============
+# Animal class 1
+# class Animal:
+#     legs = None
+#     name = None
+#
+#     def breath(self):
+#         print("Breathing")
+#
+#     def run(self):
+#         print("Running")
+#
+# cat = Animal()
+# dog = Animal()
+#
+#
+# cat.legs = 4
+# dog.legs = 6
+# print(cat.legs)
+# print(dog.legs)
 
+
+# Homework
 
 class Dog:
     """A simple attempt to model a dog"""
@@ -21,6 +41,7 @@ class Dog:
 
 my_dog = Dog("Lord", 6)
 your_dog = Dog("Lucy", 4)
+
 
 print(f"My dog's name is '{my_dog.name}'.")
 print(f"My dog is '{my_dog.age}' years old.")
