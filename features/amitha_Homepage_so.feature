@@ -9,11 +9,10 @@ Feature: LinkMyGear Application Login
 #    And I click on "//button[text()=' Login ']"
 
   Scenario Outline: Verify if the Blog items are present
-   // And I verify element "<XPATH>" contains text "<TEXT>"
-   // And I verify element "<XPATH>" exists
+#   // And I verify element "<XPATH>" contains text "<TEXT>"
+#   // And I verify element "<XPATH>" exists
     When I click on "<XPATH>"
     And I verify element "<Blog Title>" exists
-
 
 
     Examples:

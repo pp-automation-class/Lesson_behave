@@ -4,7 +4,6 @@ from steps.steps import fill_text_in_element, click_on_element
 from pages.login import LoginPage
 
 @step('Login as "{login_name}"')
-
 def am_login(context, login_name):
     user_credentials = {
         "user": ("amitha04@gmail.com", "Mypassword"),
