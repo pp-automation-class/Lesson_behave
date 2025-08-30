@@ -24,8 +24,6 @@ for browser_type in browsers:
 
 
 # Playwright lesson
-#
-# 
 # browsers = ["chromium"]
 #
 # for browser_type in browsers:
