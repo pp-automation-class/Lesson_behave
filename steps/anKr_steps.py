@@ -1,8 +1,6 @@
 
 from behave import step
 from pages.login import LoginPage
-from browser import Browser
-from page import Page
 
 
 @step('anKr I navigate to "{url}"')
@@ -35,6 +33,7 @@ def ankr_click_on_element(context, xpath):
     """
     context.page.click_element(xpath)
     print(f"Clicked element: {xpath}")
+
 
 @step('anKr fill "{text}" in element "{xpath}"')
 def ankr_fill_in_element(context, text, xpath):
