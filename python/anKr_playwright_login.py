@@ -22,7 +22,7 @@ for browser_type in browsers:
         # page.screenshot(path=F"{browser_type}_dev_linkmygear.png")
         browser.close()
 
-#
+
 # Playwright lesson
 #
 # 

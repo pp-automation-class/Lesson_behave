@@ -140,12 +140,3 @@ def ankr_login_as_user(context, user_type):
     #
     # login_button_xpath =  "//button[text()=' Login ']"
     # click_on_element(context, login_button_xpath)
-
-
-
-
-
-
-
-
-
