@@ -30,8 +30,23 @@ class LoginPage:
         self.__input_password(password)
         self.__click_login()
 
+    def element_exists(self, xpath: str, timeout: int = 0) -> bool:
+        """Check if an element exists without throwing timeout errors.
+        If timeout > 0, poll until timeout, otherwise check once.
+        """
+        import time
+        if timeout and timeout > 0:
+            end = time.time() + timeout / 1000
+            while time.time() < end:
+                if self.page.query_selector(xpath) is not None:
+                    return True
+                self.page.wait_for_timeout(100)
+            return False
+        else:
+            return self.page.query_selector(xpath) is not None
+
     def verify_login_success(self):
-        return self.page.wait_for_selector(self.header)
+        return self.element_exists(self.header, timeout=3000)
 
     def verify_login_fail(self):
-        return self.page.wait_for_selector(self.logo_img)
+        return self.element_exists(self.logo_img, timeout=3000)
