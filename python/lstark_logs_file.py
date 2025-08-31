@@ -3,7 +3,7 @@ LOG_MESSAGE = "This message will not go to the log file"
 
 import logging
 
-logging.basicConfig(filename='lstark_example.log', level=logging.INFO,       #Suggested, and it is builded in Python
+logging.basicConfig(filename='lstark_example.log', level=logging.DEBUG,       #Suggested, and it is builded in Python
                     format='%(asctime)s | %(name)s | %(levelname)s | %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S'
                     )
@@ -29,3 +29,4 @@ Level       Description
 # CRITICAL    A critical error that may stop the program entirely
 # Automatically generated description of the levels above and changed example.log file's name to lstark_example.log 
 # """
+# Detailed use of that logs in test files will be in Session 18.
