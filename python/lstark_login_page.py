@@ -31,5 +31,5 @@ class LstarkLoginPage:
     def verify_login_success(self):
         page.wait_for_selector(self.header)
 
-    def verify_login_failure(self):
+    def verify_login_fail(self):
         page.wait_for_selector(self.logo_img)
