@@ -1,22 +1,16 @@
-import datetime
 import logging
 
 from playwright.sync_api import sync_playwright
 
 from pages.am_login_page import LoginPage
+from python.am_utils import element_exists, screenshot, log_files_path
 
-from python.am_utils import element_exists
+SECTION_NAME = "test_demo_jump"
 
 
 def goto_demo_jump_page():
     page.locator("//button[contains(.,'Demo Jump')]").click()
     page.wait_for_selector("//div/h3[@class='modal-title' and .='Generate demo jump']")
-
-
-def screenshot():
-    screenshot_path = f"../../temp/demo_jump{datetime.datetime.now().strftime('%Y-%m-%d %H%M%S%f')}.png"
-    page.screenshot(path=screenshot_path, full_page=True)
-    logging.info(f"Screenshot saved to {screenshot_path}")
 
 
 def test_demo_jump_success():
@@ -33,7 +27,7 @@ def test_demo_jump_success():
         timeout=2000,
     ):
         page.wait_for_timeout(2000)
-        screenshot()
+        screenshot(page, SECTION_NAME)
         error = "Demo device jumps limit exceeded."
         raise Exception(error)
 
@@ -42,7 +36,7 @@ def test_demo_jump_success():
         timeout=15000,
     )
     logging.info("Passed: Demo jump has been generated")
-    screenshot()
+    screenshot(page, SECTION_NAME)
 
 
 def test_demo_jump_cancel():
@@ -66,11 +60,11 @@ def test_demo_jump_fail_empty_date():
     logging.info(
         "Passed: Validation message is displayed - Please select date and time"
     )
-    screenshot()
+    screenshot(page, SECTION_NAME)
 
 
 logging.basicConfig(
-    filename="../../temp/test_demo_jump.log",
+    filename=log_files_path(SECTION_NAME + ".log"),
     level=logging.DEBUG,
     format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
@@ -81,23 +75,23 @@ browser = p.chromium.launch(headless=False)
 context = browser.new_context()
 page = context.new_page()
 
-if __name__ == "__main__":
-    try:
-        logging.info("Starting test_demo_jump.py")
-        logging.info("Login to linkmygear.com")
-        login_page = LoginPage(page)
-        login_page.navigate().login("7nxjno9lr@mozmail.com", "r+WLLX9qwx^:>:3")
-        assert login_page.verify_login_success(), "Can't continue: Login failed"
+logging.info("Starting "+SECTION_NAME)
 
-        test_demo_jump_success()
-        test_demo_jump_cancel()
-        test_demo_jump_fail_empty_date()
-    except Exception as error:
-        logging.error(error)
-        raise error
-    finally:
-        context.close()
-        browser.close()
-        p.stop()
+try:
+    logging.info("Login to linkmygear.com")
+    login_page = LoginPage(page)
+    login_page.navigate().login("7nxjno9lr@mozmail.com", "r+WLLX9qwx^:>:3")
+    assert login_page.verify_login_success(), "Can't continue: Login failed"
 
-        logging.info("Ending test_demo_jump.py")
+    test_demo_jump_success()
+    test_demo_jump_cancel()
+    test_demo_jump_fail_empty_date()
+except Exception as error:
+    logging.error(error)
+    raise error
+finally:
+    context.close()
+    browser.close()
+    p.stop()
+
+    logging.info("Ending "+SECTION_NAME)
