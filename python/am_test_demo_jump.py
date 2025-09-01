@@ -1,9 +1,11 @@
-import logging
 import datetime
+import logging
 
 from playwright.sync_api import sync_playwright
 
 from pages.am_login_page import LoginPage
+
+from python.am_utils import element_exists
 
 
 def goto_demo_jump_page():
@@ -25,7 +27,8 @@ def test_demo_jump_success():
     page.click(
         "//div[@class='form-submit']/button/span[contains(.,'Generate demo jump')]"
     )
-    if login_page.element_exists(
+    if element_exists(
+        page,
         "//p[@class='el-message__content' and .='Demo device jumps limit exceeded.']",
         timeout=2000,
     ):
