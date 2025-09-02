@@ -1,5 +1,5 @@
 
-DEV_LINKMYGER_COM = "https:dev.linkmyger.com"
+DEV_LINKMYGER_COM = "dev.linkmyger.com"
 
 from  lstark_login_page import LstarkLoginPage
 
@@ -38,7 +38,7 @@ def test_login_fail3():
     assert login_page.verify_login_fail()
 
 # page.goto("dev.linkmyger.com) replaced with page.goto(DEV_LINKMYGER_COM )
-# DEV_LINKMYGER_COM  - is constant variable
+# DEV_LINKMYGER_COM  - it is constant variable
 
 
 
