@@ -1,9 +1,9 @@
-# Session 17 - practice
-LOG_MESSAGE = "This message will not go to the log file"
-
 import logging
 
-logging.basicConfig(filename='lstark_example.log', level=logging.DEBUG,       #Suggested, and it is builded in Python
+LOG_MESSAGE = "This message will not go to the log file"
+
+
+logging.basicConfig(filename='lstark_example.log', level=logging.DEBUG,       # Suggested, and it is builded in Python
                     format='%(asctime)s | %(name)s | %(levelname)s | %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S'
                     )
@@ -27,6 +27,6 @@ Level       Description
 # WARNING     Something went wrong, but it’s not critical
 # ERROR       An error that prevents part of the program from working
 # CRITICAL    A critical error that may stop the program entirely
-# Automatically generated description of the levels above and changed example.log file's name to lstark_example.log 
-# """
+# Automatically generated description of the levels above and changed example.log file's name to lstark_example.log
+"""
 # Detailed use of that logs in test files will be in Session 18.
