@@ -19,8 +19,3 @@ def test_open_news():
     devices_page = DevicesPage(page)
     devices_page.go_to_news()
     devices_page.verify_on_news_page()
-
-
-
-
-
