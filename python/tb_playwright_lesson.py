@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
 
-# browsers = ["chromium", "firefox"]
+#browsers = ["chromium", "firefox"]
 
 browsers = ["chromium"]
 
@@ -75,38 +75,28 @@ for browser_type in browsers:
 
         new_account = page_dev.locator("//a[text()='Create an account']")
         new_account.click()
-
-        # Fill in the email
         username3 = page_dev.locator("//input[@class='el-input__inner']")
         username3.fill("new_email@mail.com")
-
-        # Click the visible part of the checkbox (not the input!)
         checkbox_visual = page_dev.locator("//span[contains(@class, 'el-checkbox__inner')]")
         checkbox_visual.click()
-
-        # Wait a little for state change to register
         page_dev.wait_for_timeout(500)
-
-        # Locate the real checkbox input (used only to check if it’s selected)
         checkbox = page_dev.locator("//input[@type='checkbox']")
-
-        # Check if the checkbox is now checked
         if checkbox.is_checked():
-            print("✅ Checkbox is checked.")
+            print("Checkbox is checked.")
             new_register = page_dev.locator("//input[contains(@class, 'lmg-btn')]")
             new_register.click()
             print("Thank you for your time.")
         else:
-            print("❌ Checkbox is NOT checked.")
+            print("Checkbox is NOT checked.")
             # Try clicking the visual checkbox again
             checkbox_visual.click()
             page_dev.wait_for_timeout(300)
             if checkbox.is_checked():
-                print("✅ Checkbox is now checked.")
+                print("Checkbox is now checked.")
                 new_register = page_dev.locator("//button[contains(@class, 'lmg-btn--sm')]")
                 new_register.click()
                 print("Thank you for your time.")
             else:
-                print("❌ Still not checked. Something is wrong.")
+                print("Still not checked. Something is wrong.")
 
         browser.close()
