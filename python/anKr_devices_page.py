@@ -14,14 +14,18 @@ class DevisesPage:
         self.setting_button = "//button[text()=' Login ']"
         self.header = "//h5"
 
+
 def go_to_news(self):
-        page.click(self.news_button)
+    page.click(self.news_button)
+
 
 def go_to_settings(self):
-        page.click(self.setting_button)
+    page.click(self.setting_button)
+
 
 def verify_on_devises_page(self):
-        page.wait_for_selector(self.header)
+    page.wait_for_selector(self.header)
+
 
 def verify_on_news_page(self):
-        page.wait_for_selector(self.logo_img)
+    page.wait_for_selector(self.logo_img)
