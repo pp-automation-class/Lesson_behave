@@ -33,3 +33,4 @@ class LoginPage:
 
     def verify_login_fail(self):
         page.wait_for_selector(self.logo_img)
+
