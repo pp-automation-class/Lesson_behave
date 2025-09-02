@@ -9,6 +9,12 @@ with sync_playwright() as p:
 
 
 def test_open_news():
+    # page.goto("dev.linkmygear.com")
+    # login_page = LoginPage(page)
+    # login_page.login("myemail", "mypassword")
+    # login_page.verify_login_success()
+    # the four lines above for login we can replace with service levels:
+    # loginservice.login("as user")
     # devicesevice.create_device("123")
     devices_page = DevicesPage(page)
     devices_page.go_to_news()
