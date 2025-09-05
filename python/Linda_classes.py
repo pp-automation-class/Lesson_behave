@@ -18,9 +18,12 @@ class Cars:
         self.years = years
         self.car_type = car_type
         self.doors = doors
+
     def describe(self):
 
         print(f"Car:{self.car_type}, год выпуска: {self.years}, имеет дверей:{self.doors}")
+
+
 c1 = Cars(2014, "Honda", 4)
 print(c1.years, c1.car_type, c1.doors)
 c2 = Cars(2020, "Audi", 2)
