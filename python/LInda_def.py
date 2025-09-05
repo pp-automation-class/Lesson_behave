@@ -20,6 +20,6 @@ add(value1, value2)
 multiply(value1, value2)
 divide(value1, value2)
 
-answer = int(input("What is your age?"))
-if answer < 5:
+age = int(input("What is your age?"))
+if age < 5:
     pass
