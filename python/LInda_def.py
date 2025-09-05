@@ -7,8 +7,10 @@ value2 = int(input("Enter another number: "))
 def add(value1, value2):
     print(f"add = {value1 + value2}")
 
+
 def multiply(value1, value2):
     print(f"multiply = {value1 * value2}")
+
 
 def divide(value1, value2):
     print(f"divide = {value1 / value2}")
