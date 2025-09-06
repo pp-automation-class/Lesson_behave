@@ -86,3 +86,21 @@ class Math_book(Books):
 m1 = Math_book("Piphagor", "Theorem", 1)
 
 print(m1)
+
+
+class Login:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+        self.logged_in = False
+
+    def authenticate(self):
+        if self.password == "Hello":
+            self.logged_in = True
+            print(f"{self.username} logged in successfully.")
+        else:
+            print("Invalid credentials.")
+
+
+user = Login("Lina", "Hello")
+user.authenticate()
