@@ -6,19 +6,19 @@ Feature: LinkMyGear Application Login
 
   Scenario: Successful user login with valid credentials
     When User fill "test12345.sky@gmail.com" in element "//input[@name='username']"
-    And User fill "%12345ytkonos" in element "//input[@name='password']"
+    And User fill "3V8i5v%h4y@R758d" in element "//input[@name='password']"
     And User click on "//button[text()=' Login ']"
     Then User verify element "//h3[contains(text(),'My device')]" exists
 
   Scenario: Unsuccessful user login with invalid username
     When User fill "xxx" in element "//input[@name='username']"
-    When User fill "%12345ytkonos" in element "//input[@name='password']"
+    When User fill "3V8i5v%h4y@R758d" in element "//input[@name='password']"
     And User click on "//button[text()=' Login ']"
     Then User verify element "//h5" contains text "Account"
     And User verify element "//p[text()='Sorry, unrecognized username or password.']" exists
 
   Scenario: Unsuccessful user login with empty username
-    When User fill "%12345ytkonos" in element "//input[@name='password']"
+    When User fill "3V8i5v%h4y@R758d" in element "//input[@name='password']"
     And User click on "//button[text()=' Login ']"
     Then User verify element "//h5" contains text "Account"
     And User verify element "//div[text()='Email is required']" exists

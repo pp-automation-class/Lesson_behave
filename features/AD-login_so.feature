@@ -22,6 +22,9 @@ Feature: LinkMyGear Application Login
       | test12345.skygmail.com    | %12345ytkonos | //p[text()='Sorry, unrecognized username or password.'] |
       | test12345.sky@gmailcom    | %12345ytkonos | //p[text()='Sorry, unrecognized username or password.'] |
 
+
+
+
   Scenario Outline: Forgot password with various credentials
     Given I navigate to "https://dev.linkmygear.com"
     And I verify element "//h5" contains text "Account"
